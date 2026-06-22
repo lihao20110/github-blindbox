@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "GitHub 每日盲盒 — 用户配置",
+  "type": "object",
+  "properties": {
+    "readerProfile": {
+      "type": "string",
+      "description": "阅读者画像，AI 据此筛选项目。改这段文字 = 改筛选标准",
+      "default": "独立开发者，vibecoding 实践者，追求实用、有创意的产品，不需要底层技术/算法/框架"
+    }
+  }
+}

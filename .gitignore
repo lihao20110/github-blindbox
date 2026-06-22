@@ -1,0 +1,4 @@
+node_modules/
+.env
+trending-feed.json
+*.log

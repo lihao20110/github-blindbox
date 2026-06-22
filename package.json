@@ -1,0 +1,16 @@
+{
+  "name": "github-blindbox",
+  "version": "1.0.0",
+  "description": "GitHub 每日盲盒 — AI 自动筛选 Trending 项目，推送到邮箱",
+  "type": "module",
+  "scripts": {
+    "trending": "node scripts/github-trending.js",
+    "digest": "node scripts/github-digest.js",
+    "send": "node scripts/send-email.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.0",
+    "marked": "^18.0.5",
+    "nodemailer": "^9.0.1"
+  }
+}

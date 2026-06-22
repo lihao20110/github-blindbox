@@ -1,0 +1,39 @@
+name: GitHub 每日盲盒
+
+on:
+  schedule:
+    - cron: '0 10 * * *'   # 每天 18:00 北京时间，按需修改
+  workflow_dispatch:         # 支持手动触发
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 安装依赖
+        run: cd scripts && npm install
+
+      - name: 拉取最新 Trending 数据
+        run: curl -sL -o trending-feed.json https://raw.githubusercontent.com/zhangxq0606-ctrl/github-blindbox/main/trending-feed.json
+
+      - name: 生成摘要
+        env:
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+          ANTHROPIC_BASE_URL: https://dashscope.aliyuncs.com/compatible-mode/v1
+          ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
+        run: |
+          cat trending-feed.json | node scripts/github-digest.js > /tmp/digest.txt
+          echo "摘要生成完成"
+
+      - name: 发送邮件
+        env:
+          QQ_EMAIL: ${{ secrets.QQ_EMAIL }}
+          QQ_SMTP_AUTH_CODE: ${{ secrets.QQ_SMTP_AUTH_CODE }}
+        run: |
+          cat /tmp/digest.txt | node scripts/send-email.js \
+            --to "$QQ_EMAIL" \
+            --subject "GitHub 每日盲盒 — $(date '+%Y-%m-%d')"
