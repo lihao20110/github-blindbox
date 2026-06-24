@@ -143,7 +143,11 @@ async function callLLM(systemPrompt) {
   loadEnv({ path: join(homedir(), '.follow-builders', '.env') });
 
   const apiKey = process.env.ANTHROPIC_AUTH_TOKEN;
-  const baseUrl = process.env.ANTHROPIC_BASE_URL || 'https://dashscope.aliyuncs.com/compatible-mode/v1';
+  if (!apiKey) {
+    throw new Error('Missing ANTHROPIC_AUTH_TOKEN. 请在 GitHub 仓库 Settings → Secrets and variables → Actions 中添加这个 Secret。');
+  }
+
+  const baseUrl = (process.env.ANTHROPIC_BASE_URL || 'https://dashscope.aliyuncs.com/compatible-mode/v1').replace(/\/+$/, '');
   const model = process.env.ANTHROPIC_MODEL || 'deepseek-v4-flash';
 
   const url = `${baseUrl}/chat/completions`;

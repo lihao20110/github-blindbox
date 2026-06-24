@@ -9,10 +9,10 @@ jobs:
   send:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
-          node-version: '20'
+          node-version: '24'
 
       - name: 安装依赖
         run: cd scripts && npm install
@@ -22,10 +22,25 @@ jobs:
 
       - name: 恢复历史去重缓存
         id: cache-restore
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: .trending-history.json
           key: trending-history-${{ github.repository }}
+
+      - name: 检查必需 Secrets
+        env:
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+          ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
+          QQ_EMAIL: ${{ secrets.QQ_EMAIL }}
+          QQ_SMTP_AUTH_CODE: ${{ secrets.QQ_SMTP_AUTH_CODE }}
+        run: |
+          [ -n "$ANTHROPIC_AUTH_TOKEN" ] || { echo "::error::缺少 Secret: ANTHROPIC_AUTH_TOKEN"; exit 1; }
+          [ -n "$ANTHROPIC_BASE_URL" ] || { echo "::error::缺少 Secret: ANTHROPIC_BASE_URL"; exit 1; }
+          [ -n "$ANTHROPIC_MODEL" ] || { echo "::error::缺少 Secret: ANTHROPIC_MODEL"; exit 1; }
+          [ -n "$QQ_EMAIL" ] || { echo "::error::缺少 Secret: QQ_EMAIL"; exit 1; }
+          [ -n "$QQ_SMTP_AUTH_CODE" ] || { echo "::error::缺少 Secret: QQ_SMTP_AUTH_CODE"; exit 1; }
+          echo "必需 Secrets 已配置"
 
       - name: 生成摘要（带历史去重）
         env:
