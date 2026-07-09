@@ -221,6 +221,7 @@ ${yesterdayHint}
 
 #### 🎨 创意/好玩类（最有意思的排最前面）
 不是为了有用，而是有趣、好看、有新意——游戏、艺术、新奇实验等。每段写清楚「有意思在哪」。
+**数量硬约束：至少 2 个**。如果今日新星候选池里实在没有 2 个能算"创意/好玩"的项目（候选池本身不够 or 全是工具类），可以下探到常青树候选池里再挑 1 个补足，但优先从新星池里找。即使要降低单个项目的"创意浓度"也要凑足 2 个——创意/好玩是这封邮件的灵魂，不能缺席。
 
 #### 🛠 效率工具类
 开箱即用解决具体问题——文件处理、自动化、效率提升等。每段写清楚「解决了什么问题」。
@@ -237,6 +238,7 @@ ${yesterdayHint}
 - 优先保证质量，挑不到 8 个可以下探，但不要低于 5 个——除非候选池实际不足 5 个
 - 如果候选池确实不够（<5 个），可以适当放宽星数门槛或选一些品类独特的项目来补齐，但必须都来自新星池
 - 宁可挑 5 个真正好的，也不要为凑数塞进 8 个重复或没亮点的
+- **创意/好玩类至少 2 个（硬约束）**：即使其他品类要削减也要保住创意类的 2 个名额
 
 ## 输出要求
 
@@ -280,10 +282,11 @@ async function callLLM(systemPrompt) {
   const url = `${baseUrl}/chat/completions`;
 
   // 请求体：enable_thinking 是阿里云百炼 DashScope 独有参数，只有走阿里云端点才加
-  // DeepSeek 官方默认非思考模式，不需要额外字段
+  // 思考模式打开后，思考过程会消耗 token，max_tokens 需要相应提高
+  // DeepSeek 官方端点没有这个参数，按官方默认行为（不显式禁用也不显式启用）
   const reqBody = {
     model: model,
-    max_tokens: 8192,
+    max_tokens: 16384,
     messages: [
       { role: 'system', content: systemPrompt },
       { role: 'user', content: '请生成今天的 GitHub Trending 精选。' }
@@ -291,7 +294,9 @@ async function callLLM(systemPrompt) {
   };
   const isAliyunDashScope = /aliyuncs\.com|dashscope/.test(baseUrl);
   if (isAliyunDashScope) {
-    reqBody.enable_thinking = false;
+    // 思考模式打开：让模型在生成前先思考候选项目的匹配度，提高筛选质量
+    // 思考过程单独走 reasoning_content 字段，最终回答仍走 content，下游解析不变
+    reqBody.enable_thinking = true;
   }
 
   const response = await fetch(url, {
