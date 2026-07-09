@@ -1,12 +1,26 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "GitHub 每日盲盒 — 用户配置",
+  "description": "GitHub 每日盲盒 — 用户偏好配置。改这个文件 = 改筛选标准和硬过滤规则",
   "type": "object",
   "properties": {
     "readerProfile": {
       "type": "string",
       "description": "阅读者画像，AI 据此筛选项目。改这段文字 = 改筛选标准",
-      "default": "独立开发者，vibecoding 实践者，追求实用、有创意的产品，不需要底层技术/算法/框架"
+      "default": "独立开发者，vibecoding 实践者，Windows 用户，Claude Code + Codex 主力工具，有产品思维和运维思维，喜欢「能直接用的」和「有意思的」"
+    },
+    "hardFilters": {
+      "type": "array",
+      "description": "数据层硬过滤规则。在送 LLM 之前，按这些规则删除明显不相关的项目。每条规则匹配 description 或 fullName 字段",
+      "items": {
+        "type": "object",
+        "properties": {
+          "reason": { "type": "string", "description": "规则名称，用于日志" },
+          "pattern": { "type": "string", "description": "正则表达式（不区分大小写）" },
+          "field": { "type": "string", "enum": ["description", "fullName"], "description": "匹配哪个字段" },
+          "starsException": { "type": "number", "description": "可选。如果项目星数 >= 此值，则不应用此规则（用于「破10万星例外」）" }
+        },
+        "required": ["reason", "pattern", "field"]
+      }
     }
   }
 }

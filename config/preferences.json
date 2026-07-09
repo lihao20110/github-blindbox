@@ -1,0 +1,61 @@
+{
+  "readerProfile": "独立开发者，vibecoding 实践者，Windows 用户，Claude Code + Codex 主力工具，有产品思维和运维思维，喜欢「能直接用的」和「有意思的」，不需要底层技术/算法/框架",
+  "hardFilters": [
+    {
+      "reason": "翻墙/代理/内网穿透",
+      "pattern": "tunnel|proxy|vpn|ngrok|\\bfrp\\b|内网穿透|expose your local",
+      "field": "description"
+    },
+    {
+      "reason": "纯算法/数据结构/刷题",
+      "pattern": "algorithm|leetcode|data structure|robotics algorithm|sample code.*textbook",
+      "field": "description"
+    },
+    {
+      "reason": "Web框架/HTTP框架/路由库",
+      "pattern": "web framework|http framework|high-performance.*framework|microservices framework|rest api.*framework",
+      "field": "description"
+    },
+    {
+      "reason": "K8s/云原生/可观测性基础设施",
+      "pattern": "kubernetes|\\bk8s\\b|opentelemetry|jaeger|prometheus|victoriametrics|time series database|orchestration platform|cert-manager|container runtime|distributed tracing|job queueing|linux virtual machine",
+      "field": "description"
+    },
+    {
+      "reason": "数据库驱动/客户端库/语言工具库",
+      "pattern": "redis client|go client|database driver|utility library|lodash-style|generics.*library",
+      "field": "description"
+    },
+    {
+      "reason": "纯Agent框架(破10万星例外)",
+      "pattern": "multi-agent|agent framework|coding agent|agent sdk|agent toolkit|agent collaboration|agent cli",
+      "field": "description",
+      "starsException": 100000
+    },
+    {
+      "reason": "构建工具/包管理器/任务运行器",
+      "pattern": "build tool|package manager|make alternative|cross-platform build|task runner",
+      "field": "description"
+    },
+    {
+      "reason": "安全靶场/渗透测试训练",
+      "pattern": "deliberately insecure|security training|webgoat",
+      "field": "description"
+    },
+    {
+      "reason": "底层可视化库/VNC/远程桌面",
+      "pattern": "vnc client|vnc web|3d globe|3d map|javascript library.*globe|remote desktop",
+      "field": "description"
+    },
+    {
+      "reason": "字体/排版",
+      "pattern": "typeface|font for code|monospace font",
+      "field": "description"
+    },
+    {
+      "reason": "算法库(按项目名)",
+      "pattern": "thealgorithms|pythonrobotics",
+      "field": "fullName"
+    }
+  ]
+}

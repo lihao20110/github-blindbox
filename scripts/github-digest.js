@@ -11,8 +11,14 @@
 
 import { readFileSync, existsSync, writeFileSync } from 'fs';
 import { join } from 'path';
-import { homedir } from 'os';
 import { config as loadEnv } from 'dotenv';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+// 项目本地 .env（与 follow-builders 完全拆开，不再读 ~/.follow-builders/.env）
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const PROJECT_ROOT = join(__dirname, '..');
+const ENV_PATH = join(PROJECT_ROOT, '.env');
 
 // -- Parse args --------------------------------------------------------------
 
@@ -46,9 +52,56 @@ async function readStdin() {
   return Buffer.concat(chunks).toString('utf-8');
 }
 
+// -- Load preferences from config file ---------------------------------------
+
+function loadPreferences() {
+  const configPath = join(process.cwd(), 'config', 'preferences.json');
+  try {
+    if (existsSync(configPath)) {
+      const content = readFileSync(configPath, 'utf-8');
+      const prefs = JSON.parse(content);
+      console.error(`[github-digest] Preferences loaded from ${configPath}`);
+      return prefs;
+    }
+  } catch (err) {
+    console.error(`[github-digest] Warning: could not load preferences: ${err.message}`);
+  }
+  return {
+    readerProfile: '独立开发者，vibecoding 实践者，Windows 用户，Claude Code + Codex 主力工具，有产品思维和运维思维，喜欢「能直接用的」和「有意思的」',
+    hardFilters: []
+  };
+}
+
+// -- Hard filter: remove clearly irrelevant repos BEFORE sending to LLM ------
+
+function hardFilterRepos(repos, prefs) {
+  if (!prefs.hardFilters || !Array.isArray(prefs.hardFilters) || prefs.hardFilters.length === 0) {
+    return { kept: repos, dropped: [] };
+  }
+  const dropped = [];
+  const kept = repos.filter(repo => {
+    for (const rule of prefs.hardFilters) {
+      const fieldValue = rule.field === 'fullName'
+        ? (repo.fullName || '').toLowerCase()
+        : (repo.description || '').toLowerCase();
+      let regex;
+      try { regex = new RegExp(rule.pattern, 'i'); } catch { continue; }
+      if (regex.test(fieldValue)) {
+        if (rule.starsException && (repo.stars || 0) >= rule.starsException) {
+          continue;
+        }
+        dropped.push({ repo, reason: rule.reason });
+        return false;
+      }
+    }
+    return true;
+  });
+  return { kept, dropped };
+}
+
 // -- Build prompt ------------------------------------------------------------
 
-function buildPrompt(data, excludeList) {
+function buildPrompt(data, excludeList, prefs) {
   const rawRepos = data.repos || [];
   const excludeSet = new Set(excludeList);
   const initialCount = rawRepos.length;
@@ -128,10 +181,7 @@ ${freshNote}
 
 ## 阅读者画像（请结合此画像筛选项目）
 
-- 独立开发者，vibecoding 实践者，Windows 用户
-- Claude Code + Codex 主力工具
-- 有产品思维和运维思维
-- 喜欢「能直接用的」和「有意思的」
+${prefs.readerProfile}
 
 ## 排除项（除非对 vibecoding 有直接帮助）
 
@@ -214,13 +264,14 @@ ${freshList.length > 0 ? freshList : '（今日新星候选池为空——所有
 // -- Call LLM (OpenAI-compatible) --------------------------------------------
 
 async function callLLM(systemPrompt) {
-  loadEnv({ path: join(homedir(), '.follow-builders', '.env') });
+  loadEnv({ path: ENV_PATH });
 
   const apiKey = process.env.ANTHROPIC_AUTH_TOKEN;
   if (!apiKey) {
-    throw new Error('Missing ANTHROPIC_AUTH_TOKEN. 请在 GitHub 仓库 Settings → Secrets and variables → Actions 中添加这个 Secret。');
+    throw new Error('Missing ANTHROPIC_AUTH_TOKEN. 请在项目根目录 .env 文件或 GitHub Actions Secrets 中配置。');
   }
 
+  // 默认走阿里云百炼 DashScope 兼容端点；船长自己在 Actions Secrets 里配业务空间专属端点
   const baseUrl = (process.env.ANTHROPIC_BASE_URL || 'https://dashscope.aliyuncs.com/compatible-mode/v1').replace(/\/+$/, '');
   const model = process.env.ANTHROPIC_MODEL || 'deepseek-v4-flash';
 
@@ -235,6 +286,7 @@ async function callLLM(systemPrompt) {
     body: JSON.stringify({
       model: model,
       max_tokens: 8192,
+      enable_thinking: false,
       messages: [
         { role: 'system', content: systemPrompt },
         { role: 'user', content: '请生成今天的 GitHub Trending 精选。' }
@@ -293,8 +345,21 @@ async function main() {
     console.error(`[github-digest] Input ${repos.length} repos → after sponsors-filter ${afterClean.length} → after history-dedup ${afterClean.length - actualExcludedByHistory} (actually excluded ${actualExcludedByHistory} by history, ${afterSponsorsFiltered} by dirty sponsors). History pool size: ${args.excludeList.length}`);
   }
 
+  // --- Hard filter: remove clearly irrelevant repos BEFORE sending to LLM ---
+  const prefs = loadPreferences();
+  const cleanedRepos = repos.filter(r => r.owner !== 'sponsors');
+  const { kept, dropped } = hardFilterRepos(cleanedRepos, prefs);
+  if (dropped.length > 0) {
+    console.error(`[github-digest] Hard filter removed ${dropped.length} repos:`);
+    for (const d of dropped) {
+      console.error(`  ✗ ${d.repo.fullName} — ${d.reason}`);
+    }
+  }
+  console.error(`[github-digest] After hard filter: ${kept.length} repos remaining (was ${cleanedRepos.length})`);
+  data.repos = kept;
+
   try {
-    const systemPrompt = buildPrompt(data, args.excludeList);
+    const systemPrompt = buildPrompt(data, args.excludeList, prefs);
     const digest = await callLLM(systemPrompt);
     console.log(digest);
     console.error('[github-digest] Digest generated successfully');

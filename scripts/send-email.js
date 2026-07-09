@@ -13,9 +13,14 @@
 import { readFile } from 'fs/promises';
 import { createTransport } from 'nodemailer';
 import { config as loadEnv } from 'dotenv';
-import { homedir } from 'os';
-import { join } from 'path';
 import { marked } from 'marked';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+
+// 项目本地 .env（与 follow-builders 完全拆开，不再读 ~/.follow-builders/.env）
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const PROJECT_ROOT = join(__dirname, '..');
+const ENV_PATH = join(PROJECT_ROOT, '.env');
 
 const QQ_SMTP_HOST = 'smtp.qq.com';
 const QQ_SMTP_PORT = 465;
@@ -115,6 +120,8 @@ function getArg(name) {
 // -- Main --------------------------------------------------------------------
 
 async function main() {
+  loadEnv({ path: ENV_PATH });
+
   const toEmail = getArg('--to') || process.env.QQ_EMAIL;
   const subject = getArg('--subject');
 
@@ -126,12 +133,10 @@ async function main() {
     return;
   }
 
-  loadEnv({ path: join(homedir(), '.follow-builders', '.env') });
-
   const smtpUser = process.env.QQ_EMAIL;
   const smtpPass = process.env.QQ_SMTP_AUTH_CODE;
-  if (!smtpUser) { console.error('Error: QQ_EMAIL not found in .env'); process.exit(1); }
-  if (!smtpPass) { console.error('Error: QQ_SMTP_AUTH_CODE not found in .env'); process.exit(1); }
+  if (!smtpUser) { console.error('Error: QQ_EMAIL not found in .env or environment'); process.exit(1); }
+  if (!smtpPass) { console.error('Error: QQ_SMTP_AUTH_CODE not found in .env or environment'); process.exit(1); }
 
   const transporter = createTransport({
     host: QQ_SMTP_HOST, port: QQ_SMTP_PORT, secure: true,

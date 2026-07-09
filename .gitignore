@@ -1,3 +1,5 @@
 node_modules/
 .env
 *.log
+digest.txt
+digest-stderr.txt
