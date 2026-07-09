@@ -165,7 +165,7 @@ function buildPrompt(data, excludeList, prefs) {
   function formatRepo(repo) {
     return `\n## ${repo.fullName}
 - 描述: ${repo.description} | 语言: ${repo.language}
-- 🔥 今日新增: ${repo.starsToday}
+- 🔥 本周新增: ${repo.starsToday}
 - ⭐ 总星数: ${repo.stars}
 `;
   }
@@ -201,7 +201,7 @@ ${prefs.readerProfile}
 ## 加权信号（同类项目内部排序用）
 
 - ⭐ 总星数高 → 经过了市场验证（加分）
-- 🔥 今日增量大 → 当前热度高（加分）
+- 🔥 本周增量大 → 近期热度高（加分）
 - ⏳ 连续多日出现在 trending 上 → 持续火爆，加分更多
 - ✨ 新奇感 → "这个没想到"（额外加分）
 
@@ -254,7 +254,7 @@ ${yesterdayHint}
    - ❌ 错误格式1：**Onlook** 然后下一行写 https://github.com/onlook-dev/onlook
    - ❌ 错误格式2：[Onlook](🔗 项目链接) — 这种文字占位符无法被解析
    - 链接 URL 必须是 https://github.com/owner/repo 形式，方便自动提取用于历史去重
-5. **今日新星部分每个项目必须标注今日新增星数**，格式如 `🔥 +126 星/日`，放在项目介绍末尾。常青树部分不用标。
+5. **今日新星部分每个项目必须标注本周新增星数**，格式如 `🔥 +126 星/周`，放在项目介绍末尾。常青树部分不用标。
 6. 总体长度控制在 2000-4000 字
 7. **经典常青树和今日新星两部分的项目不要重复**
 8. 末尾附上一句 "以上由 AI 从 GitHub Trending 自动筛选生成"
