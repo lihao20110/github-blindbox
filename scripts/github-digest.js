@@ -164,8 +164,7 @@ function buildPrompt(data, excludeList, prefs) {
   // --- Build two SEPARATE candidate lists: evergreen (full pool) vs fresh (deduped)
   function formatRepo(repo) {
     return `\n## ${repo.fullName}
-- 描述: ${repo.description}
-- 语言: ${repo.language}
+- 描述: ${repo.description} | 语言: ${repo.language}
 - 🔥 今日新增: ${repo.starsToday}
 - ⭐ 总星数: ${repo.stars}
 `;
