@@ -66,7 +66,7 @@ function buildEmailHtml(digestText, subject) {
 
     <tr><td style="background:linear-gradient(135deg,#2563eb,#1d4ed8);padding:40px 44px 32px;">
       <h1 style="margin:0;font-size:30px;font-weight:700;color:#fff;letter-spacing:-0.3px;">${escapeHtml(digestTitle)}</h1>
-      <p style="margin:10px 0 0;font-size:16px;color:rgba(255,255,255,0.8);">GitHub 每日盲盒 · 每天 18:00 更新</p>
+      
     </td></tr>
 
     <tr><td style="padding:36px 44px 28px;">
