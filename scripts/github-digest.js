@@ -55,7 +55,7 @@ async function readStdin() {
 // -- Load preferences from config file ---------------------------------------
 
 function loadPreferences() {
-  const configPath = join(process.cwd(), 'config', 'preferences.json');
+  const configPath = join(PROJECT_ROOT, 'config', 'preferences.json');
   try {
     if (existsSync(configPath)) {
       const content = readFileSync(configPath, 'utf-8');

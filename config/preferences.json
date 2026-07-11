@@ -3,7 +3,7 @@
   "hardFilters": [
     {
       "reason": "翻墙/代理/内网穿透",
-      "pattern": "tunnel|proxy|vpn|ngrok|\\bfrp\\b|内网穿透|expose your local",
+      "pattern": "tunnel|proxy|vpn|ngrok|\\bfrp\\b|内网穿透|expose your local|xray|v2ray|wireguard",
       "field": "description"
     },
     {
@@ -28,7 +28,7 @@
     },
     {
       "reason": "纯Agent框架(破10万星例外)",
-      "pattern": "multi-agent|agent framework|coding agent|agent sdk|agent toolkit|agent collaboration|agent cli",
+      "pattern": "multi-agent|agent framework|agent sdk|agent toolkit|agent collaboration|agent cli",
       "field": "description",
       "starsException": 100000
     },
@@ -50,6 +50,11 @@
     {
       "reason": "字体/排版",
       "pattern": "typeface|font for code|monospace font",
+      "field": "description"
+    },
+    {
+      "reason": "纯编程语言/运行时/编译器",
+      "pattern": "programming language|runtime for|native port of|compiler for",
       "field": "description"
     },
     {
