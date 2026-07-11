@@ -1,6 +1,7 @@
 node_modules/
 .env
 *.log
+# 本地测试产物
 digest.txt
 digest-stderr.txt
 # 本地架构说明，仅供 AI 修改操作时阅读，不对外发布

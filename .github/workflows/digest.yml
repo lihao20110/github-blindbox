@@ -15,7 +15,7 @@ jobs:
           node-version: '24'
 
       - name: 安装依赖
-        run: cd scripts && npm install
+        run: npm install
 
       - name: 拉取最新 Trending 数据
         run: curl -sfL -o trending-feed.json https://raw.githubusercontent.com/zhangxq0606-ctrl/github-blindbox/master/trending-feed.json
