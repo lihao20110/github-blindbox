@@ -20,6 +20,13 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = join(__dirname, '..');
 const ENV_PATH = join(PROJECT_ROOT, '.env');
 
+// -- Constants ---------------------------------------------------------------
+
+// 常青树池短期去重窗口：排除最近 N 条推荐记录，避免连续撞车。
+// 每天 ~7 条推荐，50 条 ≈ 7 天冷却期，确保高 stars 经典项目一周内不重复。
+// 之前是 20（约 2-3 天），导致 pocketbase/manim 等高频重复，船长体验差。
+const RECENT_WINDOW = 50;
+
 // -- Parse args --------------------------------------------------------------
 
 function parseArgs() {
@@ -113,15 +120,14 @@ function buildPrompt(data, excludeList, prefs) {
     .map(r => ({ ...r, url: `https://github.com/${r.fullName}` }))
     .filter(r => r.owner !== 'sponsors');
 
-  // 常青树池短期去重：最近 20 条推荐记录（约 2 天）不重复，避免连续撞车
-  // 但 2 天前的项目可以重新进入常青树池，给经典项目二次亮相的机会
-  const RECENT_WINDOW = 20;
+  // 常青树池短期去重：最近 RECENT_WINDOW 条推荐记录不重复，避免连续撞车
+  // 超过窗口的项目可以重新进入常青树池，给经典项目二次亮相的机会
   const recentExcludes = excludeList.length > RECENT_WINDOW
     ? excludeList.slice(-RECENT_WINDOW)
     : excludeList;
   const recentExcludeSet = new Set(recentExcludes);
 
-  // --- Evergreen pool: 经典常青树候选池（仅排除近 2 天已推荐项目）
+  // --- Evergreen pool: 经典常青树候选池（仅排除近 7 天已推荐项目）
   const candidatesEvergreen = allRepos.filter(r => !recentExcludeSet.has(r.fullName));
 
   // --- Fresh pool: 今日新星候选池（和常青树同一标准，都要过历史去重）
@@ -175,7 +181,7 @@ function buildPrompt(data, excludeList, prefs) {
   for (const repo of freshRepos) freshList += formatRepo(repo);
 
   const freshNote = freshExcludedByHistory > 0
-    ? `（今日原始候选 ${allRepos.length} 个，被历史去重排除 ${freshExcludedByHistory} 个，剩余新星候选 ${freshCount} 个。常青树候选仅排除近 2 天已推荐项目，共 ${evergreenCount} 个。）`
+    ? `（今日原始候选 ${allRepos.length} 个，被历史去重排除 ${freshExcludedByHistory} 个，剩余新星候选 ${freshCount} 个。常青树候选仅排除近 7 天已推荐项目，共 ${evergreenCount} 个。）`
     : `（今日候选 ${allRepos.length} 个，常青树池与新星池各有 ${evergreenCount} / ${freshCount} 个。）`;
 
   return `今天的日期是 ${today}。以下是从 GitHub Trending 今日列表中抓取到的热门项目。
@@ -210,7 +216,7 @@ ${yesterdayHint}
 
 ### 第一部分：🏆 经典常青树
 
-从下面**「常青树候选池」**中挑选 **2 个总星数高、久经考验的老牌项目**，但要注意：**不要选底层技术类**（如算法库、Web框架、编程语言等）。**仅排除近 2 天已推荐项目**——避免连续重复，但 2 天前的经典项目可以重新推荐。
+从下面**「常青树候选池」**中挑选 **2 个总星数高、久经考验的老牌项目**，但要注意：**不要选底层技术类**（如算法库、Web框架、编程语言等）。**仅排除近 7 天已推荐项目**——避免连续重复，但 7 天前的经典项目可以重新推荐。
 
 将选出的 2 个项目归类到以下三类中展示（每类最多 1 个，三类不一定都出现）：
 - 🛠 效率工具类：能解决具体问题的成熟工具
@@ -264,7 +270,7 @@ ${yesterdayHint}
 
 ---
 
-### 常青树候选池（仅排除近 2 天已推荐项目，共 ${evergreenCount} 个，供「🏆 经典常青树」从中挑选 2 个）
+### 常青树候选池（仅排除近 7 天已推荐项目，共 ${evergreenCount} 个，供「🏆 经典常青树」从中挑选 2 个）
 
 ${evergreenList}
 
@@ -389,6 +395,36 @@ async function main() {
     const digest = await callLLM(systemPrompt);
     console.log(digest);
     console.error('[github-digest] Digest generated successfully');
+
+    // --- 事后校验：监控 AI 是否违规推荐 history 里的项目 ---
+    // 区分两种情况：
+    //   1. evergreen 重复（在 history 但超过 RECENT_WINDOW 窗口）—— 设计允许，常青树可重推
+    //   2. 违规重推（在最近 RECENT_WINDOW 条 history 里）—— 应被两个池子完全排除，AI 违规
+    {
+      const digestProjects = new Set();
+      const linkRe = /\[([^\]]+)\]\(https:\/\/github\.com\/([^/]+\/[^/)\s]+)\)/g;
+      const bareUrlRe = /https:\/\/github\.com\/([^\s/]+\/[^\s/)\]]+)/g;
+      let m;
+      while ((m = linkRe.exec(digest)) !== null) digestProjects.add(m[2]);
+      while ((m = bareUrlRe.exec(digest)) !== null) {
+        digestProjects.add(m[1].replace(/\/$/, '').split(/[?#]/)[0]);
+      }
+
+      const excludeSet = new Set(args.excludeList);
+      const recentSet = new Set(args.excludeList.slice(-RECENT_WINDOW));
+      const violations = [];
+      const evergreenRepeats = [];
+      for (const name of digestProjects) {
+        if (recentSet.has(name)) violations.push(name);
+        else if (excludeSet.has(name)) evergreenRepeats.push(name);
+      }
+      if (violations.length > 0) {
+        console.error(`[github-digest] ⚠️ VIOLATION: AI recommended ${violations.length} projects from recent ${RECENT_WINDOW} history (should be excluded from both pools): ${violations.join(', ')}`);
+      }
+      if (evergreenRepeats.length > 0) {
+        console.error(`[github-digest] Evergreen repeats (allowed by design, older than ${RECENT_WINDOW} history): ${evergreenRepeats.join(', ')}`);
+      }
+    }
 
     if (args.historyOutput) {
       const selectedNames = [];
