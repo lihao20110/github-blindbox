@@ -61,6 +61,47 @@
       "reason": "算法库(按项目名)",
       "pattern": "thealgorithms|pythonrobotics",
       "field": "fullName"
+    },
+    {
+      "reason": "翻墙/VPN工具(按项目名补漏，应对描述为空的情况)",
+      "pattern": "vpn|xray|v2ray|clash|shadowsocks|trojan|wireguard|easytier|zapret|nostr-vpn|shadowsocksr|\\bwarp\\b",
+      "field": "fullName"
+    },
+    {
+      "reason": "Agent编排/工作流编排框架(破10万星例外)",
+      "pattern": "agent orchestration|agentic orchestration|workforce learning|workflow orchestration|orchestrate.*agent",
+      "field": "description",
+      "starsException": 100000
+    },
+    {
+      "reason": "Java/Spring企业级框架",
+      "pattern": "spring boot|spring framework|spring-powered|\\bruoyi\\b|j2ee|java ee|springcloud",
+      "field": "description"
+    },
+    {
+      "reason": "大数据/流处理/OLAP数据库基础设施",
+      "pattern": "apache flink|apache cassandra|apache pinot|stream processing|\\bolap\\b|distributed database|columnar database|time-series database|realtime.*olap",
+      "field": "description"
+    },
+    {
+      "reason": "企业级AI网关/推理服务框架",
+      "pattern": "ai gateway|inference serving|inference framework|datacenter scale|model serving|llm gateway|enterprise ai platform",
+      "field": "description"
+    },
+    {
+      "reason": "UI组件库/设计系统(太出名不算灵感)",
+      "pattern": "component library|react component library|ui toolkit|design system|material-ui|chakra ui|ant design|mantine",
+      "field": "description"
+    },
+    {
+      "reason": "教程/课程/面试题(非项目)",
+      "pattern": "web development course|learn low level|coding interview|leetcode|tutorial series|面试题|刷题|course for",
+      "field": "description"
+    },
+    {
+      "reason": "密钥/配置管理基础设施",
+      "pattern": "secrets management|secrets vault|terraform.*automation|infrastructure as code",
+      "field": "description"
     }
   ]
 }
