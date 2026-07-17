@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { existsSync, readFileSync, writeFileSync } from 'fs';
+import { existsSync, readFileSync, renameSync, writeFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { config as loadEnv } from 'dotenv';
 import { fileURLToPath } from 'url';
@@ -16,10 +16,12 @@ const MIN_DIGEST_BYTES = 4000;
 const MIN_TOTAL_RECOMMENDATIONS = 4;
 const MAX_TOTAL_RECOMMENDATIONS = 6;
 const MIN_EVERGREEN_POOL = 12;
+const FRESH_SHORTLIST_LIMIT = 60;
+const EVERGREEN_SHORTLIST_LIMIT = 30;
 
 function parseArgs() {
   const args = process.argv.slice(2);
-  const parsed = { excludeList: [], historyOutput: null, historyStateFile: null, historyStateOutput: null };
+  const parsed = { excludeList: [], historyOutput: null, historyStateFile: null, historyStateOutput: null, dataAgeHours: null };
   for (let index = 0; index < args.length; index++) {
     if (args[index] === '--exclude-file' && args[index + 1]) {
       try {
@@ -35,6 +37,9 @@ function parseArgs() {
       parsed.historyStateFile = args[++index];
     } else if (args[index] === '--history-state-output' && args[index + 1]) {
       parsed.historyStateOutput = args[++index];
+    } else if (args[index] === '--data-age-hours' && args[index + 1]) {
+      const value = Number(args[++index]);
+      if (Number.isFinite(value) && value >= 0) parsed.dataAgeHours = Math.floor(value);
     }
   }
   return parsed;
@@ -130,7 +135,50 @@ function resolvePrimaryPeriod(repo) {
   return 'weekly';
 }
 
-function buildPools(repos, excludeList, historyState, now) {
+function takeFreshDiverse(repos, limit) {
+  const groups = new Map();
+  for (const repo of repos) {
+    const language = repo.language || 'Unknown';
+    if (!groups.has(language)) groups.set(language, []);
+    groups.get(language).push(repo);
+  }
+  for (const group of groups.values()) group.sort((a, b) => b.starsToday - a.starsToday || b.stars - a.stars);
+
+  const selected = [];
+  while (selected.length < limit) {
+    const activeGroups = [...groups.values()]
+      .filter(group => group.length > 0)
+      .sort((a, b) => b[0].starsToday - a[0].starsToday || b[0].stars - a[0].stars);
+    if (activeGroups.length === 0) break;
+    for (const group of activeGroups) {
+      if (selected.length >= limit) break;
+      selected.push(group.shift());
+    }
+  }
+  return selected;
+}
+
+function buildShortlists(repos) {
+  const normalized = repos.map(repo => ({ ...repo, periods: normalizePeriods(repo) }));
+  const freshCandidates = normalized.filter(repo => repo.periods.some(period => period === 'daily' || period === 'weekly'));
+  const monthlyCandidates = normalized.filter(repo => repo.periods.includes('monthly'));
+  const weeklyCandidates = normalized.filter(repo => repo.periods.includes('weekly'));
+  const fresh = takeFreshDiverse(freshCandidates, FRESH_SHORTLIST_LIMIT);
+  const monthly = [...monthlyCandidates]
+    .sort((a, b) => b.stars - a.stars || b.starsToday - a.starsToday)
+    .slice(0, EVERGREEN_SHORTLIST_LIMIT);
+  const weeklyFallback = [...weeklyCandidates]
+    .sort((a, b) => b.stars - a.stars || b.starsToday - a.starsToday)
+    .slice(0, EVERGREEN_SHORTLIST_LIMIT);
+  return {
+    freshNames: new Set(fresh.map(repo => repo.fullName)),
+    monthlyNames: new Set(monthly.map(repo => repo.fullName)),
+    weeklyFallbackNames: new Set(weeklyFallback.map(repo => repo.fullName)),
+    counts: { fresh: fresh.length, monthly: monthly.length, weeklyFallback: weeklyFallback.length }
+  };
+}
+
+function buildPools(repos, excludeList, historyState, now, shortlists) {
   const entries = historyState?.entries || [];
   const freshBlocked = namesInCooldown(entries, FRESH_COOLDOWN_DAYS, now);
   const evergreenBlocked = namesInCooldown(entries, EVERGREEN_COOLDOWN_DAYS, now);
@@ -145,12 +193,12 @@ function buildPools(repos, excludeList, historyState, now) {
   const normalized = repos
     .filter(repo => repo.owner !== 'sponsors' && repo.fullName)
     .map(repo => ({ ...repo, url: `https://github.com/${repo.fullName}`, periods: normalizePeriods(repo) }));
-  const fresh = normalized.filter(repo => repo.periods.some(period => period === 'daily' || period === 'weekly') && !freshBlocked.has(repo.fullName));
-  const monthlyEvergreen = normalized.filter(repo => repo.periods.includes('monthly') && !evergreenBlocked.has(repo.fullName));
+  const fresh = normalized.filter(repo => shortlists.freshNames.has(repo.fullName) && !freshBlocked.has(repo.fullName));
+  const monthlyEvergreen = normalized.filter(repo => shortlists.monthlyNames.has(repo.fullName) && !evergreenBlocked.has(repo.fullName));
   const monthlyNames = new Set(monthlyEvergreen.map(repo => repo.fullName));
   const weeklyFallback = monthlyEvergreen.length < MIN_EVERGREEN_POOL
     ? normalized
-      .filter(repo => repo.periods.includes('weekly') && !evergreenBlocked.has(repo.fullName) && !monthlyNames.has(repo.fullName))
+      .filter(repo => shortlists.weeklyFallbackNames.has(repo.fullName) && !evergreenBlocked.has(repo.fullName) && !monthlyNames.has(repo.fullName))
       .sort((a, b) => b.stars - a.stars || b.starsToday - a.starsToday)
       .slice(0, MIN_EVERGREEN_POOL - monthlyEvergreen.length)
     : [];
@@ -280,24 +328,30 @@ function calculateTargets(freshAvailable, evergreenAvailable) {
   return { freshTarget, evergreenTarget };
 }
 
-function composeDigest(today, fresh, evergreen, freshTarget) {
+function composeDigest(today, fresh, evergreen, freshTarget, dataAgeHours) {
   const fallbackHeading = freshTarget < 4 ? '🏆 经典常青树补充' : '🏆 经典常青树';
   const freshSection = freshTarget > 0
     ? `## 🔥 今日新星\n\n${fresh.text}\n`
     : '## 📦 本期说明\n\n今日新星候选在 hardFilter 与 7 天冷却后不足，本期仅由经典项目补充推荐。\n';
   const evergreenSection = evergreen.text ? `\n## ${fallbackHeading}\n\n${evergreen.text}\n` : '';
-  return `# GitHub 每日盲盒 — ${today}\n\n今天按数据新鲜度和独立冷却策略分开筛选：今日新星只来自 daily／weekly 候选；常青树优先来自 monthly，数量不足时才补充高星 weekly 候选。\n\n${freshSection}${evergreenSection}\n以上由 AI 从 GitHub Trending 自动筛选生成\n`;
+  const ageNotice = dataAgeHours !== null && dataAgeHours >= 24 ? `⚠️ 数据非当日，源自 ${dataAgeHours} 小时前。\n\n` : '';
+  return `# GitHub 每日盲盒 — ${today}\n\n${ageNotice}今天按数据新鲜度和独立冷却策略分开筛选：今日新星只来自 daily／weekly 候选；常青树优先来自 monthly，数量不足时才补充高星 weekly 候选。\n\n${freshSection}${evergreenSection}\n以上由 AI 从 GitHub Trending 自动筛选生成\n`;
 }
 
 function writeHistoryOutputs(args, selected) {
+  function atomicWriteJson(filePath, value) {
+    const tempPath = `${filePath}.${process.pid}.tmp`;
+    writeFileSync(tempPath, JSON.stringify(value, null, 2));
+    renameSync(tempPath, filePath);
+  }
   if (args.historyOutput) {
-    writeFileSync(args.historyOutput, JSON.stringify(selected.map(item => item.fullName), null, 2));
+    atomicWriteJson(args.historyOutput, selected.map(item => item.fullName));
     console.error(`[github-digest] History saved: ${selected.length} project names`);
   }
   if (args.historyStateOutput) {
     const sentAt = new Date().toISOString();
     const entries = selected.map(item => ({ fullName: item.fullName, pool: item.pool, sentAt }));
-    writeFileSync(args.historyStateOutput, JSON.stringify({ version: 1, entries }, null, 2));
+    atomicWriteJson(args.historyStateOutput, { version: 1, entries });
     console.error(`[github-digest] History state saved: ${entries.length} timestamped entries`);
   }
 }
@@ -315,8 +369,10 @@ async function main() {
   const { kept, dropped } = hardFilterRepos(data.repos.filter(repo => repo.owner !== 'sponsors'), preferences);
   console.error(`[github-digest] Input ${data.repos.length} repos → hard filter kept ${kept.length}, removed ${dropped.length}`);
   for (const item of dropped) console.error(`  ✗ ${item.repo.fullName} — ${item.reason}`);
+  const shortlists = buildShortlists(kept);
+  console.error(`[github-digest] Shortlists: fresh=${shortlists.counts.fresh}/${FRESH_SHORTLIST_LIMIT}, evergreen monthly=${shortlists.counts.monthly}/${EVERGREEN_SHORTLIST_LIMIT}, weekly fallback=${shortlists.counts.weeklyFallback}/${EVERGREEN_SHORTLIST_LIMIT}`);
   const historyState = loadHistoryState(args.historyStateFile);
-  const pools = buildPools(kept, args.excludeList, historyState, Date.now());
+  const pools = buildPools(kept, args.excludeList, historyState, Date.now(), shortlists);
   console.error(`[github-digest] Pools: fresh=${pools.fresh.length} (blocked=${pools.freshBlocked}, target ≥20); evergreen=${pools.evergreen.length} (monthly=${pools.monthlyEvergreenCount}, weekly fallback=${pools.weeklyFallbackCount}, blocked=${pools.evergreenBlocked})`);
   if (pools.fresh.length < 20) console.error(`[github-digest] Warning: fresh pool below acceptance target (${pools.fresh.length}/20)`);
 
@@ -327,13 +383,13 @@ async function main() {
   const targets = calculateTargets(fresh.names.length, evergreenCandidates.length);
   if (targets.freshTarget !== fresh.names.length) throw new Error('Fresh selection target changed unexpectedly');
   let evergreen = await generateSelection('evergreen', evergreenCandidates, preferences, targets.evergreenTarget);
-  let digest = composeDigest(today, fresh, evergreen, targets.freshTarget);
+  let digest = composeDigest(today, fresh, evergreen, targets.freshTarget, args.dataAgeHours);
   let bytes = Buffer.byteLength(digest, 'utf8');
   if (bytes < MIN_DIGEST_BYTES) {
     const rewriteFresh = targets.evergreenTarget === 0 || Buffer.byteLength(fresh.text, 'utf8') <= Buffer.byteLength(evergreen.text, 'utf8');
     if (rewriteFresh) fresh = await rewriteSelection('fresh', fresh, targets.freshTarget);
     else evergreen = await rewriteSelection('evergreen', evergreen, targets.evergreenTarget);
-    digest = composeDigest(today, fresh, evergreen, targets.freshTarget);
+    digest = composeDigest(today, fresh, evergreen, targets.freshTarget, args.dataAgeHours);
     bytes = Buffer.byteLength(digest, 'utf8');
   }
   const selected = [

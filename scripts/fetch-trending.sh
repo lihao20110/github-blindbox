@@ -44,6 +44,18 @@ fi
 REPO_COUNT=$(node -e "const d=require('$TMP_DIR/trending-data-raw.json'); console.log(d.repos?.length||0)" 2>/dev/null || echo "0")
 echo "[$TIMESTAMP] Fetched $REPO_COUNT repos" | tee -a "$LOG_FILE"
 
+QUALITY_PASSED=$(node -e "const d=require('$TMP_DIR/trending-data-raw.json'); console.log(d.quality?.meetsMinimum === true ? 'true' : 'false')" 2>/dev/null || echo "false")
+if [ "$QUALITY_PASSED" != "true" ]; then
+  echo "[$TIMESTAMP] WARNING: Quality gate failed (requires at least 120 repos); keeping previous cache" | tee -a "$LOG_FILE"
+  rm -f "$TMP_DIR/trending-data-raw.json"
+  exit 0
+fi
+
+MONTHLY_DEGRADED=$(node -e "const d=require('$TMP_DIR/trending-data-raw.json'); console.log(d.quality?.degraded === true ? 'true' : 'false')" 2>/dev/null || echo "false")
+if [ "$MONTHLY_DEGRADED" = "true" ]; then
+  echo "[$TIMESTAMP] WARNING: Monthly source is degraded (fewer than 20 unique repos)" | tee -a "$LOG_FILE"
+fi
+
 # Step 3: Copy to cache (for 18:00 email)
 if [ "$REPO_COUNT" -gt 0 ]; then
   cp "$TMP_DIR/trending-data-raw.json" "$CACHE_DIR/trending-data.json"

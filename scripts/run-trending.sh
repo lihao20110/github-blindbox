@@ -9,6 +9,13 @@
 
 set -e
 
+LOCK_FILE="/tmp/github-blindbox-run-trending.lock"
+exec 9>"$LOCK_FILE"
+if ! flock -n 9; then
+  echo "[$(date '+%Y-%m-%d %H:%M:%S')] WARNING: Another run-trending process is active; exiting"
+  exit 0
+fi
+
 # 不再强制覆盖 MODEL：使用 .env 里的 deepseek-v4-flash，与 follow-builders 保持一致
 # 如需切换模型，改 $PROJECT_DIR/.env 即可
 
@@ -50,6 +57,22 @@ if [ "$REPO_COUNT" -eq 0 ]; then
   exit 1
 fi
 
+if ! CACHE_AGE_HOURS=$(node -e "const fs=require('fs'); const data=JSON.parse(fs.readFileSync(process.argv[1],'utf8')); const timestamp=Date.parse(data.fetchedAt); if(!Number.isFinite(timestamp)) process.exit(1); console.log(Math.max(0, Math.floor((Date.now()-timestamp)/3600000)))" "$CACHE_FILE" 2>>"$LOG_FILE"); then
+  echo "[$TIMESTAMP] ERROR: Cache fetchedAt is missing or invalid; refusing to send" | tee -a "$LOG_FILE"
+  exit 1
+fi
+
+AGE_ARGS=""
+if [ "$CACHE_AGE_HOURS" -ge 48 ]; then
+  echo "[$TIMESTAMP] ERROR: Cache is ${CACHE_AGE_HOURS} hours old (limit: 48); refusing to send" | tee -a "$LOG_FILE"
+  exit 1
+elif [ "$CACHE_AGE_HOURS" -ge 24 ]; then
+  AGE_ARGS="--data-age-hours $CACHE_AGE_HOURS"
+  echo "[$TIMESTAMP] WARNING: Cache is ${CACHE_AGE_HOURS} hours old; sending with stale-data notice" | tee -a "$LOG_FILE"
+else
+  echo "[$TIMESTAMP] Cache age is ${CACHE_AGE_HOURS} hours; sending normally" | tee -a "$LOG_FILE"
+fi
+
 # Show cache age if available
 if [ -f "$CACHE_DIR/trending-fetched-at.txt" ]; then
   FETCHED_AT=$(cat "$CACHE_DIR/trending-fetched-at.txt")
@@ -71,7 +94,7 @@ else
   echo "[$TIMESTAMP] No persistent history found at $HISTORY_FILE. Running without history dedup." | tee -a "$LOG_FILE"
 fi
 
-cat "$CACHE_FILE" | node "$SCRIPTS_DIR/github-digest.js" $EXCLUDE_ARGS --history-state-file "$HISTORY_STATE_FILE" --history-output "$TMP_DIR/trending-history.json.tmp" --history-state-output "$TMP_DIR/trending-history-state.json.tmp" 2>>"$LOG_FILE" > "$TMP_DIR/trending-digest.txt"
+cat "$CACHE_FILE" | node "$SCRIPTS_DIR/github-digest.js" $EXCLUDE_ARGS $AGE_ARGS --history-state-file "$HISTORY_STATE_FILE" --history-output "$TMP_DIR/trending-history.json.tmp" --history-state-output "$TMP_DIR/trending-history-state.json.tmp" 2>>"$LOG_FILE" > "$TMP_DIR/trending-digest.txt"
 
 if [ $? -ne 0 ] || [ ! -s "$TMP_DIR/trending-digest.txt" ]; then
   echo "[$TIMESTAMP] ERROR: Failed to generate digest" | tee -a "$LOG_FILE"

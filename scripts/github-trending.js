@@ -98,18 +98,23 @@ async function main() {
     const query = new URLSearchParams({ since: period });
     if (language) query.set('language', language);
     const body = await fetchJSON(`${API_BASE}?${query}`);
-    return (body.data || []).map(item => toRepo(item, period, language));
+    return { period, repos: (body.data || []).map(item => toRepo(item, period, language)) };
   });
 
   const seen = new Map();
   let failedRequests = 0;
+  const periodQuality = Object.fromEntries(PERIODS.map(period => [period, {
+    successfulRequests: 0
+  }]));
   for (const result of results) {
     if (result.status === 'rejected') {
       failedRequests++;
       console.error(`[trending] Request failed: ${result.reason.message}`);
       continue;
     }
-    for (const repo of result.value) {
+    const { period, repos } = result.value;
+    if (periodQuality[period]) periodQuality[period].successfulRequests++;
+    for (const repo of repos) {
       const existing = seen.get(repo.fullName);
       seen.set(repo.fullName, existing ? mergeRepo(existing, repo) : repo);
     }
@@ -140,8 +145,20 @@ async function main() {
     .sort((a, b) => b.starsToday - a.starsToday || b.stars - a.stars)
     .map((repo, index) => ({ ...repo, rank: index + 1, source: repo.sources.join(',') }));
   const periodCounts = Object.fromEntries(PERIODS.map(period => [period, repos.filter(repo => repo.periods.includes(period)).length]));
-  console.error(`[trending] Final: ${repos.length} unique repos; daily=${periodCounts.daily}, weekly=${periodCounts.weekly}, monthly=${periodCounts.monthly}, failed requests=${failedRequests}, sponsors resolved/filtered=${sponsorsEntries.length}`);
-  console.log(JSON.stringify({ repos, fetchedAt: new Date().toISOString(), count: repos.length, source: 'cloudflare-multi-period' }, null, 2));
+  const quality = {
+    totalRepos: repos.length,
+    minimumTotalRepos: 120,
+    meetsMinimum: repos.length >= 120,
+    degraded: periodCounts.monthly < 20,
+    periods: Object.fromEntries(PERIODS.map(period => [period, {
+      successfulRequests: periodQuality[period].successfulRequests,
+      uniqueRepos: periodCounts[period]
+    }]))
+  };
+  console.error(`[trending] Final: ${repos.length} unique repos; daily=${periodCounts.daily} (${quality.periods.daily.successfulRequests} requests), weekly=${periodCounts.weekly} (${quality.periods.weekly.successfulRequests} requests), monthly=${periodCounts.monthly} (${quality.periods.monthly.successfulRequests} requests), failed requests=${failedRequests}, sponsors resolved/filtered=${sponsorsEntries.length}`);
+  if (!quality.meetsMinimum) console.error(`[trending] Quality gate failed: ${repos.length}/120 repos; cache must not be replaced`);
+  if (quality.degraded) console.error(`[trending] DEGRADED: monthly unique repos ${periodCounts.monthly}/20`);
+  console.log(JSON.stringify({ repos, fetchedAt: new Date().toISOString(), count: repos.length, source: 'cloudflare-multi-period', quality }, null, 2));
 }
 
 main().catch(error => {
