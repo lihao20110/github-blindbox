@@ -4,7 +4,7 @@
 # ============================================================================
 # 从缓存文件读取前一天 05:00 抓取的数据，AI 筛选后发邮件。
 #
-# Cron: 0 18 * * * bash /var/www/github-blindbox/scripts/run-trending.sh
+# Cron: 0 10 * * * bash /var/www/github-blindbox/scripts/run-trending.sh
 # ============================================================================
 
 set -e

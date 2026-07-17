@@ -49,6 +49,9 @@ async function mapWithConcurrency(items, limit, worker) {
   return results;
 }
 
+// 周期优先级：daily > weekly > monthly（越短越能反映真实热度，展示时取最短周期）
+const PERIOD_PRIORITY = { daily: 3, weekly: 2, monthly: 1 };
+
 function toRepo(item, period, language) {
   return {
     rank: 0,
@@ -62,20 +65,30 @@ function toRepo(item, period, language) {
     forks: Number(item.forks) || 0,
     starsToday: Number(item.starsToday) || 0,
     periods: [period],
-    sources: [`${period}:${language || 'all'}`]
+    sources: [`${period}:${language || 'all'}`],
+    primaryPeriod: period
   };
 }
 
 function mergeRepo(existing, incoming) {
+  // primaryPeriod 取最短周期（daily > weekly > monthly），保证 starsToday 的语义跟展示单位一致
+  const primaryPeriod = (PERIOD_PRIORITY[incoming.primaryPeriod] || 0) > (PERIOD_PRIORITY[existing.primaryPeriod] || 0)
+    ? incoming.primaryPeriod
+    : existing.primaryPeriod;
+  // starsToday 跟随 primaryPeriod：取最短周期对应的 starsToday，避免 monthly 的月增量冒充周增量
+  const starsToday = primaryPeriod === incoming.primaryPeriod
+    ? Math.max(existing.starsToday, incoming.starsToday)
+    : existing.starsToday;
   return {
     ...existing,
     description: existing.description === '（暂无描述）' ? incoming.description : existing.description,
     language: existing.language === 'Unknown' ? incoming.language : existing.language,
     stars: Math.max(existing.stars, incoming.stars),
     forks: Math.max(existing.forks, incoming.forks),
-    starsToday: Math.max(existing.starsToday, incoming.starsToday),
+    starsToday,
     periods: [...new Set([...existing.periods, ...incoming.periods])],
-    sources: [...new Set([...existing.sources, ...incoming.sources])]
+    sources: [...new Set([...existing.sources, ...incoming.sources])],
+    primaryPeriod
   };
 }
 

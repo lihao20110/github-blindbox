@@ -98,7 +98,15 @@ function legacyNames(state, key, now) {
   const legacy = state?.legacy;
   const expiresAt = legacy?.[`${key}ExpiresAt`];
   if (!Array.isArray(legacy?.[key]) || !Number.isFinite(Date.parse(expiresAt))) return new Set();
-  return Date.parse(expiresAt) > now ? new Set(legacy[key]) : new Set();
+  if (Date.parse(expiresAt) > now) return new Set(legacy[key]);
+  // 安全网：legacy 过期后，如果 state entries 不足 20 条，继续用 legacy 保护
+  // 避免 state 积累不够时冷却失效导致重复推送
+  const stateEntryCount = (state?.entries || []).length;
+  if (stateEntryCount < 20) {
+    console.error(`[github-digest] Legacy ${key} expired but state has only ${stateEntryCount} entries (<20), extending legacy protection`);
+    return new Set(legacy[key]);
+  }
+  return new Set();
 }
 
 function normalizePeriods(repo) {
@@ -106,6 +114,20 @@ function normalizePeriods(repo) {
   const source = String(repo.source || '');
   const periods = ['daily', 'weekly', 'monthly'].filter(period => source.includes(period));
   return periods.length > 0 ? periods : ['weekly'];
+}
+
+// 热度单位映射：starsToday 的增量周期跟 primaryPeriod 对齐
+const GROWTH_UNIT = { daily: '星/日', weekly: '星/周', monthly: '星/月' };
+
+function resolvePrimaryPeriod(repo) {
+  if (repo.primaryPeriod) return repo.primaryPeriod;
+  // 旧数据兜底：从 periods 取最短周期
+  if (Array.isArray(repo.periods)) {
+    if (repo.periods.includes('daily')) return 'daily';
+    if (repo.periods.includes('weekly')) return 'weekly';
+    if (repo.periods.includes('monthly')) return 'monthly';
+  }
+  return 'weekly';
 }
 
 function buildPools(repos, excludeList, historyState, now) {
@@ -143,19 +165,22 @@ function buildPools(repos, excludeList, historyState, now) {
 }
 
 function formatCandidates(repos) {
-  return repos.map(repo => [
-    `项目：${repo.fullName}`,
-    `描述：${repo.description || '（暂无描述）'}`,
-    `语言：${repo.language || 'Unknown'}｜热度：${repo.starsToday || 0}｜总星数：${repo.stars || 0}`
-  ].join('\n')).join('\n\n');
+  return repos.map(repo => {
+    const unit = GROWTH_UNIT[resolvePrimaryPeriod(repo)] || '星/周';
+    return [
+      `项目：${repo.fullName}`,
+      `描述：${repo.description || '（暂无描述）'}`,
+      `语言：${repo.language || 'Unknown'}｜热度：+${repo.starsToday || 0} ${unit}｜总星数：${repo.stars || 0}`
+    ].join('\n');
+  }).join('\n\n');
 }
 
 function buildSelectionPrompt(kind, repos, preferences, attempt, count) {
   const isFresh = kind === 'fresh';
   const title = isFresh ? '今日新星' : '经典常青树';
   const specialRule = isFresh
-    ? '每个项目末尾必须写「🔥 +数字 星/期」热度标记；优先产品灵感、AI 工具链、开发效率和有趣的新奇项目，避免同质项目。'
-    : '优先经市场验证、仍值得独立开发者研究的成熟产品；不要选底层技术、框架或企业基础设施。';
+    ? '每个项目末尾必须写「🔥 +数字 单位」热度标记，单位必须与候选池中该项目标注的「星/日」「星/周」「星/月」完全一致；优先产品灵感、AI 工具链、开发效率和有趣的新奇项目；避免同主题项目扎堆，尽量让选中的项目覆盖不同方向（如工具/AI/创意/数据/效率）。'
+    : '优先经市场验证、仍值得独立开发者研究的成熟产品；不要选底层技术、框架或企业基础设施；每个项目末尾必须写「🔥 +数字 单位」热度标记，单位必须与候选池标注一致；避免与今日新星同主题扎堆。';
   return `你是 GitHub 每日盲盒的编辑。请仅从下面的「${title}候选池」挑选恰好 ${count} 个项目。
 
 阅读者画像：
