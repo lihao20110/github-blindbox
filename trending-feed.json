@@ -5273,7 +5273,27 @@
       "source": "daily:java,weekly:java"
     }
   ],
-  "fetchedAt": "2026-07-17T05:14:13.948Z",
+  "fetchedAt": "2026-07-17T05:34:49.857Z",
   "count": 261,
-  "source": "cloudflare-multi-period"
+  "source": "cloudflare-multi-period",
+  "quality": {
+    "totalRepos": 261,
+    "minimumTotalRepos": 120,
+    "meetsMinimum": true,
+    "degraded": false,
+    "periods": {
+      "daily": {
+        "successfulRequests": 7,
+        "uniqueRepos": 94
+      },
+      "weekly": {
+        "successfulRequests": 7,
+        "uniqueRepos": 84
+      },
+      "monthly": {
+        "successfulRequests": 7,
+        "uniqueRepos": 107
+      }
+    }
+  }
 }
