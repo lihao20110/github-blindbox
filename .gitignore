@@ -8,3 +8,4 @@ digest-stderr.txt
 ARCHITECTURE.md
 # 历史去重持久化文件（推荐过的项目 fullName 列表）
 .trending-history.json
+.trending-history-state.json

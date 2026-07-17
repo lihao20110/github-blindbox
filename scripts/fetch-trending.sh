@@ -56,7 +56,7 @@ if [ "$MONTHLY_DEGRADED" = "true" ]; then
   echo "[$TIMESTAMP] WARNING: Monthly source is degraded (fewer than 20 unique repos)" | tee -a "$LOG_FILE"
 fi
 
-# Step 3: Copy to cache (for 18:00 email)
+# Step 3: Copy to cache (for 10:00 email)
 if [ "$REPO_COUNT" -gt 0 ]; then
   cp "$TMP_DIR/trending-data-raw.json" "$CACHE_DIR/trending-data.json"
   echo "[$TIMESTAMP] Cache updated: $CACHE_DIR/trending-data.json ($REPO_COUNT repos)" | tee -a "$LOG_FILE"
