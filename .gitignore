@@ -9,3 +9,5 @@ ARCHITECTURE.md
 # 历史去重持久化文件（推荐过的项目 fullName 列表）
 .trending-history.json
 .trending-history-state.json
+# 服务器端数据缓存目录（fetch-trending.sh 写入，不应入库）
+cache/
