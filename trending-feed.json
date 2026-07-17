@@ -17,6 +17,7 @@
       "sources": [
         "monthly:python"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:python"
     },
     {
@@ -36,54 +37,11 @@
       "sources": [
         "monthly:python"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:python"
     },
     {
       "rank": 3,
-      "owner": "tinyhumansai",
-      "name": "openhuman",
-      "fullName": "tinyhumansai/openhuman",
-      "url": "https://github.com/tinyhumansai/openhuman",
-      "description": "Your Personal AI super intelligence. Private, Simple and extremely powerful.",
-      "language": "Rust",
-      "stars": 32137,
-      "forks": 3112,
-      "starsToday": 25134,
-      "periods": [
-        "weekly",
-        "monthly"
-      ],
-      "sources": [
-        "weekly:rust",
-        "monthly:rust"
-      ],
-      "source": "weekly:rust,monthly:rust"
-    },
-    {
-      "rank": 4,
-      "owner": "ruvnet",
-      "name": "RuView",
-      "fullName": "ruvnet/RuView",
-      "url": "https://github.com/ruvnet/RuView",
-      "description": "π RuView: WiFi DensePose turns commodity WiFi signals into real-time human pose estimation, vital sign monitoring, and presence detection — all without a single pixel of video.",
-      "language": "Rust",
-      "stars": 73856,
-      "forks": 9861,
-      "starsToday": 19369,
-      "periods": [
-        "daily",
-        "weekly",
-        "monthly"
-      ],
-      "sources": [
-        "daily:rust",
-        "weekly:rust",
-        "monthly:rust"
-      ],
-      "source": "daily:rust,weekly:rust,monthly:rust"
-    },
-    {
-      "rank": 5,
       "owner": "firecrawl",
       "name": "firecrawl",
       "fullName": "firecrawl/firecrawl",
@@ -99,10 +57,11 @@
       "sources": [
         "monthly:typescript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:typescript"
     },
     {
-      "rank": 6,
+      "rank": 4,
       "owner": "microsoft",
       "name": "VibeVoice",
       "fullName": "microsoft/VibeVoice",
@@ -119,10 +78,11 @@
         "monthly:all",
         "monthly:python"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:all,monthly:python"
     },
     {
-      "rank": 7,
+      "rank": 5,
       "owner": "OpenCut-app",
       "name": "OpenCut",
       "fullName": "OpenCut-app/OpenCut",
@@ -138,10 +98,11 @@
       "sources": [
         "monthly:typescript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:typescript"
     },
     {
-      "rank": 8,
+      "rank": 6,
       "owner": "stablyai",
       "name": "orca",
       "fullName": "stablyai/orca",
@@ -157,31 +118,11 @@
       "sources": [
         "monthly:typescript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:typescript"
     },
     {
-      "rank": 9,
-      "owner": "anthropics",
-      "name": "skills",
-      "fullName": "anthropics/skills",
-      "url": "https://github.com/anthropics/skills",
-      "description": "Public repository for Agent Skills",
-      "language": "Python",
-      "stars": 34721,
-      "forks": 3138,
-      "starsToday": 14773,
-      "periods": [
-        "weekly",
-        "monthly"
-      ],
-      "sources": [
-        "weekly:all",
-        "monthly:all"
-      ],
-      "source": "weekly:all,monthly:all"
-    },
-    {
-      "rank": 10,
+      "rank": 7,
       "owner": "Alishahryar1",
       "name": "free-claude-code",
       "fullName": "Alishahryar1/free-claude-code",
@@ -197,31 +138,11 @@
       "sources": [
         "monthly:python"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:python"
     },
     {
-      "rank": 11,
-      "owner": "jamiepine",
-      "name": "voicebox",
-      "fullName": "jamiepine/voicebox",
-      "url": "https://github.com/jamiepine/voicebox",
-      "description": "The open-source voice synthesis studio",
-      "language": "TypeScript",
-      "stars": 41914,
-      "forks": 5063,
-      "starsToday": 11970,
-      "periods": [
-        "daily",
-        "monthly"
-      ],
-      "sources": [
-        "daily:typescript",
-        "monthly:typescript"
-      ],
-      "source": "daily:typescript,monthly:typescript"
-    },
-    {
-      "rank": 12,
+      "rank": 8,
       "owner": "diegosouzapw",
       "name": "OmniRoute",
       "fullName": "diegosouzapw/OmniRoute",
@@ -237,10 +158,11 @@
       "sources": [
         "monthly:typescript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:typescript"
     },
     {
-      "rank": 13,
+      "rank": 9,
       "owner": "JCodesMore",
       "name": "ai-website-cloner-template",
       "fullName": "JCodesMore/ai-website-cloner-template",
@@ -256,10 +178,11 @@
       "sources": [
         "monthly:typescript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:typescript"
     },
     {
-      "rank": 14,
+      "rank": 10,
       "owner": "Z4nzu",
       "name": "hackingtool",
       "fullName": "Z4nzu/hackingtool",
@@ -275,10 +198,11 @@
       "sources": [
         "monthly:python"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:python"
     },
     {
-      "rank": 15,
+      "rank": 11,
       "owner": "HKUDS",
       "name": "DeepTutor",
       "fullName": "HKUDS/DeepTutor",
@@ -294,10 +218,11 @@
       "sources": [
         "monthly:python"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:python"
     },
     {
-      "rank": 16,
+      "rank": 12,
       "owner": "shiyu-coder",
       "name": "Kronos",
       "fullName": "shiyu-coder/Kronos",
@@ -313,10 +238,11 @@
       "sources": [
         "monthly:python"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:python"
     },
     {
-      "rank": 17,
+      "rank": 13,
       "owner": "onyx-dot-app",
       "name": "onyx",
       "fullName": "onyx-dot-app/onyx",
@@ -332,10 +258,11 @@
       "sources": [
         "monthly:python"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:python"
     },
     {
-      "rank": 18,
+      "rank": 14,
       "owner": "iptv-org",
       "name": "iptv",
       "fullName": "iptv-org/iptv",
@@ -351,10 +278,11 @@
       "sources": [
         "monthly:typescript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:typescript"
     },
     {
-      "rank": 19,
+      "rank": 15,
       "owner": "datawhalechina",
       "name": "hello-agents",
       "fullName": "datawhalechina/hello-agents",
@@ -370,10 +298,11 @@
       "sources": [
         "monthly:all"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:all"
     },
     {
-      "rank": 20,
+      "rank": 16,
       "owner": "google-research",
       "name": "timesfm",
       "fullName": "google-research/timesfm",
@@ -389,10 +318,11 @@
       "sources": [
         "monthly:python"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:python"
     },
     {
-      "rank": 21,
+      "rank": 17,
       "owner": "pbakaus",
       "name": "impeccable",
       "fullName": "pbakaus/impeccable",
@@ -408,10 +338,11 @@
       "sources": [
         "monthly:javascript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:javascript"
     },
     {
-      "rank": 22,
+      "rank": 18,
       "owner": "sherlock-project",
       "name": "sherlock",
       "fullName": "sherlock-project/sherlock",
@@ -427,10 +358,11 @@
       "sources": [
         "monthly:python"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:python"
     },
     {
-      "rank": 23,
+      "rank": 19,
       "owner": "alibaba",
       "name": "page-agent",
       "fullName": "alibaba/page-agent",
@@ -446,10 +378,11 @@
       "sources": [
         "monthly:typescript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:typescript"
     },
     {
-      "rank": 24,
+      "rank": 20,
       "owner": "virattt",
       "name": "ai-hedge-fund",
       "fullName": "virattt/ai-hedge-fund",
@@ -466,10 +399,11 @@
         "monthly:all",
         "monthly:python"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:all,monthly:python"
     },
     {
-      "rank": 25,
+      "rank": 21,
       "owner": "openai",
       "name": "codex-plugin-cc",
       "fullName": "openai/codex-plugin-cc",
@@ -485,73 +419,11 @@
       "sources": [
         "monthly:javascript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:javascript"
     },
     {
-      "rank": 26,
-      "owner": "anthropics",
-      "name": "claude-code",
-      "fullName": "anthropics/claude-code",
-      "url": "https://github.com/anthropics/claude-code",
-      "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
-      "language": "Shell",
-      "stars": 52283,
-      "forks": 3758,
-      "starsToday": 7391,
-      "periods": [
-        "weekly",
-        "monthly"
-      ],
-      "sources": [
-        "weekly:all",
-        "monthly:all"
-      ],
-      "source": "weekly:all,monthly:all"
-    },
-    {
-      "rank": 27,
-      "owner": "BloopAI",
-      "name": "vibe-kanban",
-      "fullName": "BloopAI/vibe-kanban",
-      "url": "https://github.com/BloopAI/vibe-kanban",
-      "description": "Get 10X more out of Claude Code, Codex or any coding agent",
-      "language": "Rust",
-      "stars": 13578,
-      "forks": 1253,
-      "starsToday": 7148,
-      "periods": [
-        "weekly",
-        "monthly"
-      ],
-      "sources": [
-        "weekly:all",
-        "monthly:all"
-      ],
-      "source": "weekly:all,monthly:all"
-    },
-    {
-      "rank": 28,
-      "owner": "exo-explore",
-      "name": "exo",
-      "fullName": "exo-explore/exo",
-      "url": "https://github.com/exo-explore/exo",
-      "description": "Run your own AI cluster at home with everyday devices 📱💻 🖥️⌚",
-      "language": "Python",
-      "stars": 39572,
-      "forks": 2678,
-      "starsToday": 6964,
-      "periods": [
-        "weekly",
-        "monthly"
-      ],
-      "sources": [
-        "weekly:all",
-        "monthly:all"
-      ],
-      "source": "weekly:all,monthly:all"
-    },
-    {
-      "rank": 29,
+      "rank": 22,
       "owner": "lsdefine",
       "name": "GenericAgent",
       "fullName": "lsdefine/GenericAgent",
@@ -567,10 +439,11 @@
       "sources": [
         "monthly:python"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:python"
     },
     {
-      "rank": 30,
+      "rank": 23,
       "owner": "simstudioai",
       "name": "sim",
       "fullName": "simstudioai/sim",
@@ -586,10 +459,11 @@
       "sources": [
         "monthly:all"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:all"
     },
     {
-      "rank": 31,
+      "rank": 24,
       "owner": "sansan0",
       "name": "TrendRadar",
       "fullName": "sansan0/TrendRadar",
@@ -605,31 +479,11 @@
       "sources": [
         "monthly:python"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:python"
     },
     {
-      "rank": 32,
-      "owner": "resemble-ai",
-      "name": "chatterbox",
-      "fullName": "resemble-ai/chatterbox",
-      "url": "https://github.com/resemble-ai/chatterbox",
-      "description": "SoTA open-source TTS",
-      "language": "Python",
-      "stars": 20863,
-      "forks": 2712,
-      "starsToday": 6004,
-      "periods": [
-        "weekly",
-        "monthly"
-      ],
-      "sources": [
-        "weekly:all",
-        "monthly:all"
-      ],
-      "source": "weekly:all,monthly:all"
-    },
-    {
-      "rank": 33,
+      "rank": 25,
       "owner": "eigent-ai",
       "name": "eigent",
       "fullName": "eigent-ai/eigent",
@@ -645,10 +499,33 @@
       "sources": [
         "weekly:typescript"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:typescript"
     },
     {
-      "rank": 34,
+      "rank": 26,
+      "owner": "tinyhumansai",
+      "name": "openhuman",
+      "fullName": "tinyhumansai/openhuman",
+      "url": "https://github.com/tinyhumansai/openhuman",
+      "description": "Your Personal AI super intelligence. Private, Simple and extremely powerful.",
+      "language": "Rust",
+      "stars": 32137,
+      "forks": 3112,
+      "starsToday": 5723,
+      "periods": [
+        "weekly",
+        "monthly"
+      ],
+      "sources": [
+        "weekly:rust",
+        "monthly:rust"
+      ],
+      "primaryPeriod": "weekly",
+      "source": "weekly:rust,monthly:rust"
+    },
+    {
+      "rank": 27,
       "owner": "alirezarezvani",
       "name": "claude-skills",
       "fullName": "alirezarezvani/claude-skills",
@@ -664,10 +541,11 @@
       "sources": [
         "monthly:python"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:python"
     },
     {
-      "rank": 35,
+      "rank": 28,
       "owner": "agentsmd",
       "name": "agents.md",
       "fullName": "agentsmd/agents.md",
@@ -683,31 +561,11 @@
       "sources": [
         "monthly:all"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:all"
     },
     {
-      "rank": 36,
-      "owner": "koala73",
-      "name": "worldmonitor",
-      "fullName": "koala73/worldmonitor",
-      "url": "https://github.com/koala73/worldmonitor",
-      "description": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
-      "language": "TypeScript",
-      "stars": 61941,
-      "forks": 9644,
-      "starsToday": 5587,
-      "periods": [
-        "daily",
-        "monthly"
-      ],
-      "sources": [
-        "daily:typescript",
-        "monthly:typescript"
-      ],
-      "source": "daily:typescript,monthly:typescript"
-    },
-    {
-      "rank": 37,
+      "rank": 29,
       "owner": "hugohe3",
       "name": "ppt-master",
       "fullName": "hugohe3/ppt-master",
@@ -723,10 +581,11 @@
       "sources": [
         "monthly:python"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:python"
     },
     {
-      "rank": 38,
+      "rank": 30,
       "owner": "run-llama",
       "name": "liteparse",
       "fullName": "run-llama/liteparse",
@@ -742,10 +601,11 @@
       "sources": [
         "monthly:rust"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:rust"
     },
     {
-      "rank": 39,
+      "rank": 31,
       "owner": "iOfficeAI",
       "name": "AionUi",
       "fullName": "iOfficeAI/AionUi",
@@ -761,10 +621,11 @@
       "sources": [
         "weekly:typescript"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:typescript"
     },
     {
-      "rank": 40,
+      "rank": 32,
       "owner": "mauriceboe",
       "name": "TREK",
       "fullName": "mauriceboe/TREK",
@@ -780,10 +641,11 @@
       "sources": [
         "monthly:typescript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:typescript"
     },
     {
-      "rank": 41,
+      "rank": 33,
       "owner": "kunchenguid",
       "name": "no-mistakes",
       "fullName": "kunchenguid/no-mistakes",
@@ -799,10 +661,11 @@
       "sources": [
         "monthly:go"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:go"
     },
     {
-      "rank": 42,
+      "rank": 34,
       "owner": "immich-app",
       "name": "immich",
       "fullName": "immich-app/immich",
@@ -818,10 +681,35 @@
       "sources": [
         "monthly:typescript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:typescript"
     },
     {
-      "rank": 43,
+      "rank": 35,
+      "owner": "ruvnet",
+      "name": "RuView",
+      "fullName": "ruvnet/RuView",
+      "url": "https://github.com/ruvnet/RuView",
+      "description": "π RuView: WiFi DensePose turns commodity WiFi signals into real-time human pose estimation, vital sign monitoring, and presence detection — all without a single pixel of video.",
+      "language": "Rust",
+      "stars": 73856,
+      "forks": 9861,
+      "starsToday": 4557,
+      "periods": [
+        "daily",
+        "weekly",
+        "monthly"
+      ],
+      "sources": [
+        "daily:rust",
+        "weekly:rust",
+        "monthly:rust"
+      ],
+      "primaryPeriod": "daily",
+      "source": "daily:rust,weekly:rust,monthly:rust"
+    },
+    {
+      "rank": 36,
       "owner": "HKUDS",
       "name": "RAG-Anything",
       "fullName": "HKUDS/RAG-Anything",
@@ -837,10 +725,33 @@
       "sources": [
         "monthly:python"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:python"
     },
     {
-      "rank": 44,
+      "rank": 37,
+      "owner": "anthropics",
+      "name": "skills",
+      "fullName": "anthropics/skills",
+      "url": "https://github.com/anthropics/skills",
+      "description": "Public repository for Agent Skills",
+      "language": "Python",
+      "stars": 34721,
+      "forks": 3138,
+      "starsToday": 4275,
+      "periods": [
+        "weekly",
+        "monthly"
+      ],
+      "sources": [
+        "weekly:all",
+        "monthly:all"
+      ],
+      "primaryPeriod": "weekly",
+      "source": "weekly:all,monthly:all"
+    },
+    {
+      "rank": 38,
       "owner": "AIDC-AI",
       "name": "Pixelle-Video",
       "fullName": "AIDC-AI/Pixelle-Video",
@@ -856,10 +767,11 @@
       "sources": [
         "monthly:python"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:python"
     },
     {
-      "rank": 45,
+      "rank": 39,
       "owner": "ChromeDevTools",
       "name": "chrome-devtools-mcp",
       "fullName": "ChromeDevTools/chrome-devtools-mcp",
@@ -875,10 +787,11 @@
       "sources": [
         "monthly:typescript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:typescript"
     },
     {
-      "rank": 46,
+      "rank": 40,
       "owner": "Tencent",
       "name": "WeKnora",
       "fullName": "Tencent/WeKnora",
@@ -895,10 +808,11 @@
         "monthly:all",
         "monthly:go"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:all,monthly:go"
     },
     {
-      "rank": 47,
+      "rank": 41,
       "owner": "BuilderIO",
       "name": "agent-native",
       "fullName": "BuilderIO/agent-native",
@@ -914,10 +828,11 @@
       "sources": [
         "monthly:typescript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:typescript"
     },
     {
-      "rank": 48,
+      "rank": 42,
       "owner": "ComposioHQ",
       "name": "awesome-codex-skills",
       "fullName": "ComposioHQ/awesome-codex-skills",
@@ -933,10 +848,11 @@
       "sources": [
         "monthly:python"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:python"
     },
     {
-      "rank": 49,
+      "rank": 43,
       "owner": "kenn-io",
       "name": "agentsview",
       "fullName": "kenn-io/agentsview",
@@ -952,10 +868,11 @@
       "sources": [
         "monthly:go"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:go"
     },
     {
-      "rank": 50,
+      "rank": 44,
       "owner": "infiniflow",
       "name": "ragflow",
       "fullName": "infiniflow/ragflow",
@@ -971,31 +888,33 @@
       "sources": [
         "monthly:go"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:go"
     },
     {
-      "rank": 51,
-      "owner": "iii-hq",
-      "name": "iii",
-      "fullName": "iii-hq/iii",
-      "url": "https://github.com/iii-hq/iii",
-      "description": "Effortlessly compose, extend, and observe every service in real-time for the first time ever.",
-      "language": "Rust",
-      "stars": 18113,
-      "forks": 1207,
-      "starsToday": 2547,
+      "rank": 45,
+      "owner": "exo-explore",
+      "name": "exo",
+      "fullName": "exo-explore/exo",
+      "url": "https://github.com/exo-explore/exo",
+      "description": "Run your own AI cluster at home with everyday devices 📱💻 🖥️⌚",
+      "language": "Python",
+      "stars": 39572,
+      "forks": 2678,
+      "starsToday": 2513,
       "periods": [
         "weekly",
         "monthly"
       ],
       "sources": [
-        "weekly:rust",
-        "monthly:rust"
+        "weekly:all",
+        "monthly:all"
       ],
-      "source": "weekly:rust,monthly:rust"
+      "primaryPeriod": "weekly",
+      "source": "weekly:all,monthly:all"
     },
     {
-      "rank": 52,
+      "rank": 46,
       "owner": "openai",
       "name": "codex",
       "fullName": "openai/codex",
@@ -1011,10 +930,11 @@
       "sources": [
         "weekly:rust"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:rust"
     },
     {
-      "rank": 53,
+      "rank": 47,
       "owner": "wonderwhy-er",
       "name": "DesktopCommanderMCP",
       "fullName": "wonderwhy-er/DesktopCommanderMCP",
@@ -1030,10 +950,11 @@
       "sources": [
         "monthly:typescript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:typescript"
     },
     {
-      "rank": 54,
+      "rank": 48,
       "owner": "IceWhaleTech",
       "name": "CasaOS",
       "fullName": "IceWhaleTech/CasaOS",
@@ -1049,31 +970,33 @@
       "sources": [
         "monthly:go"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:go"
     },
     {
-      "rank": 55,
-      "owner": "Wei-Shaw",
-      "name": "sub2api",
-      "fullName": "Wei-Shaw/sub2api",
-      "url": "https://github.com/Wei-Shaw/sub2api",
-      "description": "Sub2API-CRS2 一站式开源中转服务，让 Claude、Openai 、Gemini、Antigravity订阅统一接入，支持拼车共享，更高效分摊成本，原生工具无缝使用。",
-      "language": "Go",
-      "stars": 16294,
-      "forks": 2878,
-      "starsToday": 2269,
+      "rank": 49,
+      "owner": "resemble-ai",
+      "name": "chatterbox",
+      "fullName": "resemble-ai/chatterbox",
+      "url": "https://github.com/resemble-ai/chatterbox",
+      "description": "SoTA open-source TTS",
+      "language": "Python",
+      "stars": 20863,
+      "forks": 2712,
+      "starsToday": 2249,
       "periods": [
-        "daily",
-        "weekly"
+        "weekly",
+        "monthly"
       ],
       "sources": [
-        "daily:go",
-        "weekly:go"
+        "weekly:all",
+        "monthly:all"
       ],
-      "source": "daily:go,weekly:go"
+      "primaryPeriod": "weekly",
+      "source": "weekly:all,monthly:all"
     },
     {
-      "rank": 56,
+      "rank": 50,
       "owner": "every-app",
       "name": "open-seo",
       "fullName": "every-app/open-seo",
@@ -1089,10 +1012,11 @@
       "sources": [
         "monthly:typescript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:typescript"
     },
     {
-      "rank": 57,
+      "rank": 51,
       "owner": "google",
       "name": "A2UI",
       "fullName": "google/A2UI",
@@ -1108,10 +1032,11 @@
       "sources": [
         "weekly:all"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:all"
     },
     {
-      "rank": 58,
+      "rank": 52,
       "owner": "plastic-labs",
       "name": "honcho",
       "fullName": "plastic-labs/honcho",
@@ -1127,10 +1052,11 @@
       "sources": [
         "monthly:python"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:python"
     },
     {
-      "rank": 59,
+      "rank": 53,
       "owner": "google",
       "name": "langextract",
       "fullName": "google/langextract",
@@ -1146,10 +1072,11 @@
       "sources": [
         "weekly:all"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:all"
     },
     {
-      "rank": 60,
+      "rank": 54,
       "owner": "tambo-ai",
       "name": "tambo",
       "fullName": "tambo-ai/tambo",
@@ -1165,10 +1092,11 @@
       "sources": [
         "weekly:typescript"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:typescript"
     },
     {
-      "rank": 61,
+      "rank": 55,
       "owner": "grafana",
       "name": "grafana",
       "fullName": "grafana/grafana",
@@ -1184,10 +1112,33 @@
       "sources": [
         "monthly:typescript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:typescript"
     },
     {
-      "rank": 62,
+      "rank": 56,
+      "owner": "anthropics",
+      "name": "claude-code",
+      "fullName": "anthropics/claude-code",
+      "url": "https://github.com/anthropics/claude-code",
+      "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "language": "Shell",
+      "stars": 52283,
+      "forks": 3758,
+      "starsToday": 1655,
+      "periods": [
+        "weekly",
+        "monthly"
+      ],
+      "sources": [
+        "weekly:all",
+        "monthly:all"
+      ],
+      "primaryPeriod": "weekly",
+      "source": "weekly:all,monthly:all"
+    },
+    {
+      "rank": 57,
       "owner": "kubernetes",
       "name": "kubernetes",
       "fullName": "kubernetes/kubernetes",
@@ -1203,10 +1154,11 @@
       "sources": [
         "monthly:go"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:go"
     },
     {
-      "rank": 63,
+      "rank": 58,
       "owner": "google-labs-code",
       "name": "stitch-skills",
       "fullName": "google-labs-code/stitch-skills",
@@ -1222,10 +1174,11 @@
       "sources": [
         "monthly:typescript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:typescript"
     },
     {
-      "rank": 64,
+      "rank": 59,
       "owner": "openai",
       "name": "plugins",
       "fullName": "openai/plugins",
@@ -1241,10 +1194,11 @@
       "sources": [
         "monthly:javascript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:javascript"
     },
     {
-      "rank": 65,
+      "rank": 60,
       "owner": "krahets",
       "name": "hello-algo",
       "fullName": "krahets/hello-algo",
@@ -1260,10 +1214,11 @@
       "sources": [
         "monthly:java"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:java"
     },
     {
-      "rank": 66,
+      "rank": 61,
       "owner": "puckeditor",
       "name": "puck",
       "fullName": "puckeditor/puck",
@@ -1279,10 +1234,11 @@
       "sources": [
         "weekly:typescript"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:typescript"
     },
     {
-      "rank": 67,
+      "rank": 62,
       "owner": "dstotijn",
       "name": "hetty",
       "fullName": "dstotijn/hetty",
@@ -1298,10 +1254,11 @@
       "sources": [
         "monthly:go"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:go"
     },
     {
-      "rank": 68,
+      "rank": 63,
       "owner": "microsoft",
       "name": "apm",
       "fullName": "microsoft/apm",
@@ -1317,10 +1274,11 @@
       "sources": [
         "monthly:python"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:python"
     },
     {
-      "rank": 69,
+      "rank": 64,
       "owner": "NevaMind-AI",
       "name": "memU",
       "fullName": "NevaMind-AI/memU",
@@ -1336,10 +1294,11 @@
       "sources": [
         "weekly:python"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:python"
     },
     {
-      "rank": 70,
+      "rank": 65,
       "owner": "junegunn",
       "name": "fzf",
       "fullName": "junegunn/fzf",
@@ -1355,10 +1314,11 @@
       "sources": [
         "monthly:go"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:go"
     },
     {
-      "rank": 71,
+      "rank": 66,
       "owner": "microsoft",
       "name": "BitNet",
       "fullName": "microsoft/BitNet",
@@ -1374,10 +1334,11 @@
       "sources": [
         "weekly:python"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:python"
     },
     {
-      "rank": 72,
+      "rank": 67,
       "owner": "google",
       "name": "osv-scanner",
       "fullName": "google/osv-scanner",
@@ -1393,10 +1354,11 @@
       "sources": [
         "weekly:go"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:go"
     },
     {
-      "rank": 73,
+      "rank": 68,
       "owner": "gastownhall",
       "name": "beads",
       "fullName": "gastownhall/beads",
@@ -1412,10 +1374,11 @@
       "sources": [
         "weekly:go"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:go"
     },
     {
-      "rank": 74,
+      "rank": 69,
       "owner": "kunchenguid",
       "name": "gnhf",
       "fullName": "kunchenguid/gnhf",
@@ -1431,10 +1394,11 @@
       "sources": [
         "monthly:typescript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:typescript"
     },
     {
-      "rank": 75,
+      "rank": 70,
       "owner": "davila7",
       "name": "claude-code-templates",
       "fullName": "davila7/claude-code-templates",
@@ -1451,10 +1415,11 @@
         "weekly:all",
         "weekly:python"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:all,weekly:python"
     },
     {
-      "rank": 76,
+      "rank": 71,
       "owner": "elastic",
       "name": "elasticsearch",
       "fullName": "elastic/elasticsearch",
@@ -1470,10 +1435,33 @@
       "sources": [
         "monthly:java"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:java"
     },
     {
-      "rank": 77,
+      "rank": 72,
+      "owner": "BloopAI",
+      "name": "vibe-kanban",
+      "fullName": "BloopAI/vibe-kanban",
+      "url": "https://github.com/BloopAI/vibe-kanban",
+      "description": "Get 10X more out of Claude Code, Codex or any coding agent",
+      "language": "Rust",
+      "stars": 13578,
+      "forks": 1253,
+      "starsToday": 1084,
+      "periods": [
+        "weekly",
+        "monthly"
+      ],
+      "sources": [
+        "weekly:all",
+        "monthly:all"
+      ],
+      "primaryPeriod": "weekly",
+      "source": "weekly:all,monthly:all"
+    },
+    {
+      "rank": 73,
       "owner": "restic",
       "name": "restic",
       "fullName": "restic/restic",
@@ -1489,10 +1477,11 @@
       "sources": [
         "monthly:go"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:go"
     },
     {
-      "rank": 78,
+      "rank": 74,
       "owner": "ilysenko",
       "name": "codex-desktop-linux",
       "fullName": "ilysenko/codex-desktop-linux",
@@ -1508,10 +1497,11 @@
       "sources": [
         "monthly:javascript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:javascript"
     },
     {
-      "rank": 79,
+      "rank": 75,
       "owner": "prometheus",
       "name": "prometheus",
       "fullName": "prometheus/prometheus",
@@ -1527,10 +1517,33 @@
       "sources": [
         "monthly:go"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:go"
     },
     {
-      "rank": 80,
+      "rank": 76,
+      "owner": "iii-hq",
+      "name": "iii",
+      "fullName": "iii-hq/iii",
+      "url": "https://github.com/iii-hq/iii",
+      "description": "Effortlessly compose, extend, and observe every service in real-time for the first time ever.",
+      "language": "Rust",
+      "stars": 18113,
+      "forks": 1207,
+      "starsToday": 880,
+      "periods": [
+        "weekly",
+        "monthly"
+      ],
+      "sources": [
+        "weekly:rust",
+        "monthly:rust"
+      ],
+      "primaryPeriod": "weekly",
+      "source": "weekly:rust,monthly:rust"
+    },
+    {
+      "rank": 77,
       "owner": "facebook",
       "name": "pyrefly",
       "fullName": "facebook/pyrefly",
@@ -1546,10 +1559,11 @@
       "sources": [
         "monthly:rust"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:rust"
     },
     {
-      "rank": 81,
+      "rank": 78,
       "owner": "yuliskov",
       "name": "SmartTube",
       "fullName": "yuliskov/SmartTube",
@@ -1565,10 +1579,11 @@
       "sources": [
         "monthly:java"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:java"
     },
     {
-      "rank": 82,
+      "rank": 79,
       "owner": "binwiederhier",
       "name": "ntfy",
       "fullName": "binwiederhier/ntfy",
@@ -1584,10 +1599,11 @@
       "sources": [
         "monthly:go"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:go"
     },
     {
-      "rank": 83,
+      "rank": 80,
       "owner": "Flowseal",
       "name": "zapret-discord-youtube",
       "fullName": "Flowseal/zapret-discord-youtube",
@@ -1603,10 +1619,11 @@
       "sources": [
         "weekly:all"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:all"
     },
     {
-      "rank": 84,
+      "rank": 81,
       "owner": "OpenWhispr",
       "name": "openwhispr",
       "fullName": "OpenWhispr/openwhispr",
@@ -1622,10 +1639,11 @@
       "sources": [
         "monthly:javascript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:javascript"
     },
     {
-      "rank": 85,
+      "rank": 82,
       "owner": "openai",
       "name": "skills",
       "fullName": "openai/skills",
@@ -1641,31 +1659,11 @@
       "sources": [
         "daily:python"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:python"
     },
     {
-      "rank": 86,
-      "owner": "ast-grep",
-      "name": "ast-grep",
-      "fullName": "ast-grep/ast-grep",
-      "url": "https://github.com/ast-grep/ast-grep",
-      "description": "⚡A CLI tool for code structural search, lint and rewriting. Written in Rust",
-      "language": "Rust",
-      "stars": 14508,
-      "forks": 394,
-      "starsToday": 728,
-      "periods": [
-        "weekly",
-        "monthly"
-      ],
-      "sources": [
-        "weekly:rust",
-        "monthly:rust"
-      ],
-      "source": "weekly:rust,monthly:rust"
-    },
-    {
-      "rank": 87,
+      "rank": 83,
       "owner": "skylot",
       "name": "jadx",
       "fullName": "skylot/jadx",
@@ -1681,10 +1679,11 @@
       "sources": [
         "monthly:java"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:java"
     },
     {
-      "rank": 88,
+      "rank": 84,
       "owner": "EveryInc",
       "name": "compound-engineering-plugin",
       "fullName": "EveryInc/compound-engineering-plugin",
@@ -1700,10 +1699,11 @@
       "sources": [
         "weekly:python"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:python"
     },
     {
-      "rank": 89,
+      "rank": 85,
       "owner": "thunderbird",
       "name": "thunderbird-android",
       "fullName": "thunderbird/thunderbird-android",
@@ -1719,10 +1719,11 @@
       "sources": [
         "daily:typescript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:typescript"
     },
     {
-      "rank": 90,
+      "rank": 86,
       "owner": "VectifyAI",
       "name": "PageIndex",
       "fullName": "VectifyAI/PageIndex",
@@ -1738,10 +1739,11 @@
       "sources": [
         "weekly:python"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:python"
     },
     {
-      "rank": 91,
+      "rank": 87,
       "owner": "ArnasDon",
       "name": "wacrm",
       "fullName": "ArnasDon/wacrm",
@@ -1757,10 +1759,11 @@
       "sources": [
         "monthly:typescript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:typescript"
     },
     {
-      "rank": 92,
+      "rank": 88,
       "owner": "chinese-poetry",
       "name": "chinese-poetry",
       "fullName": "chinese-poetry/chinese-poetry",
@@ -1776,10 +1779,11 @@
       "sources": [
         "monthly:javascript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:javascript"
     },
     {
-      "rank": 93,
+      "rank": 89,
       "owner": "ruvnet",
       "name": "claude-flow",
       "fullName": "ruvnet/claude-flow",
@@ -1795,10 +1799,11 @@
       "sources": [
         "weekly:typescript"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:typescript"
     },
     {
-      "rank": 94,
+      "rank": 90,
       "owner": "DrewThomasson",
       "name": "ebook2audiobook",
       "fullName": "DrewThomasson/ebook2audiobook",
@@ -1814,10 +1819,11 @@
       "sources": [
         "weekly:python"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:python"
     },
     {
-      "rank": 95,
+      "rank": 91,
       "owner": "agentscope-ai",
       "name": "agentscope-java",
       "fullName": "agentscope-ai/agentscope-java",
@@ -1833,10 +1839,11 @@
       "sources": [
         "monthly:java"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:java"
     },
     {
-      "rank": 96,
+      "rank": 92,
       "owner": "3b1b",
       "name": "manim",
       "fullName": "3b1b/manim",
@@ -1852,10 +1859,11 @@
       "sources": [
         "weekly:python"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:python"
     },
     {
-      "rank": 97,
+      "rank": 93,
       "owner": "seaweedfs",
       "name": "seaweedfs",
       "fullName": "seaweedfs/seaweedfs",
@@ -1871,10 +1879,11 @@
       "sources": [
         "monthly:go"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:go"
     },
     {
-      "rank": 98,
+      "rank": 94,
       "owner": "rendercv",
       "name": "rendercv",
       "fullName": "rendercv/rendercv",
@@ -1890,10 +1899,11 @@
       "sources": [
         "daily:all"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:all"
     },
     {
-      "rank": 99,
+      "rank": 95,
       "owner": "CJackHwang",
       "name": "ds2api",
       "fullName": "CJackHwang/ds2api",
@@ -1909,10 +1919,33 @@
       "sources": [
         "weekly:go"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:go"
     },
     {
-      "rank": 100,
+      "rank": 96,
+      "owner": "jamiepine",
+      "name": "voicebox",
+      "fullName": "jamiepine/voicebox",
+      "url": "https://github.com/jamiepine/voicebox",
+      "description": "The open-source voice synthesis studio",
+      "language": "TypeScript",
+      "stars": 41914,
+      "forks": 5063,
+      "starsToday": 607,
+      "periods": [
+        "daily",
+        "monthly"
+      ],
+      "sources": [
+        "daily:typescript",
+        "monthly:typescript"
+      ],
+      "primaryPeriod": "daily",
+      "source": "daily:typescript,monthly:typescript"
+    },
+    {
+      "rank": 97,
       "owner": "agentgateway",
       "name": "agentgateway",
       "fullName": "agentgateway/agentgateway",
@@ -1928,10 +1961,11 @@
       "sources": [
         "monthly:rust"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:rust"
     },
     {
-      "rank": 101,
+      "rank": 98,
       "owner": "agrinman",
       "name": "tunnelto",
       "fullName": "agrinman/tunnelto",
@@ -1947,10 +1981,11 @@
       "sources": [
         "daily:all"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:all"
     },
     {
-      "rank": 102,
+      "rank": 99,
       "owner": "getarcaneapp",
       "name": "arcane",
       "fullName": "getarcaneapp/arcane",
@@ -1966,10 +2001,11 @@
       "sources": [
         "monthly:go"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:go"
     },
     {
-      "rank": 103,
+      "rank": 100,
       "owner": "XTLS",
       "name": "Xray-core",
       "fullName": "XTLS/Xray-core",
@@ -1985,10 +2021,11 @@
       "sources": [
         "weekly:go"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:go"
     },
     {
-      "rank": 104,
+      "rank": 101,
       "owner": "actions",
       "name": "checkout",
       "fullName": "actions/checkout",
@@ -2004,10 +2041,11 @@
       "sources": [
         "monthly:typescript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:typescript"
     },
     {
-      "rank": 105,
+      "rank": 102,
       "owner": "hmjz100",
       "name": "LinkSwift",
       "fullName": "hmjz100/LinkSwift",
@@ -2023,10 +2061,11 @@
       "sources": [
         "weekly:javascript"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:javascript"
     },
     {
-      "rank": 106,
+      "rank": 103,
       "owner": "Chocobozzz",
       "name": "PeerTube",
       "fullName": "Chocobozzz/PeerTube",
@@ -2042,10 +2081,11 @@
       "sources": [
         "monthly:typescript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:typescript"
     },
     {
-      "rank": 107,
+      "rank": 104,
       "owner": "juicedata",
       "name": "juicefs",
       "fullName": "juicedata/juicefs",
@@ -2061,10 +2101,11 @@
       "sources": [
         "monthly:go"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:go"
     },
     {
-      "rank": 108,
+      "rank": 105,
       "owner": "wechat-article",
       "name": "wechat-article-exporter",
       "fullName": "wechat-article/wechat-article-exporter",
@@ -2080,10 +2121,11 @@
       "sources": [
         "weekly:typescript"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:typescript"
     },
     {
-      "rank": 109,
+      "rank": 106,
       "owner": "webtorrent",
       "name": "webtorrent",
       "fullName": "webtorrent/webtorrent",
@@ -2099,31 +2141,11 @@
       "sources": [
         "monthly:javascript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:javascript"
     },
     {
-      "rank": 110,
-      "owner": "ai-dynamo",
-      "name": "dynamo",
-      "fullName": "ai-dynamo/dynamo",
-      "url": "https://github.com/ai-dynamo/dynamo",
-      "description": "A Datacenter Scale Distributed Inference Serving Framework",
-      "language": "Rust",
-      "stars": 7255,
-      "forks": 1244,
-      "starsToday": 485,
-      "periods": [
-        "weekly",
-        "monthly"
-      ],
-      "sources": [
-        "weekly:rust",
-        "monthly:rust"
-      ],
-      "source": "weekly:rust,monthly:rust"
-    },
-    {
-      "rank": 111,
+      "rank": 107,
       "owner": "Anuken",
       "name": "Mindustry",
       "fullName": "Anuken/Mindustry",
@@ -2139,10 +2161,11 @@
       "sources": [
         "monthly:java"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:java"
     },
     {
-      "rank": 112,
+      "rank": 108,
       "owner": "gyoridavid",
       "name": "ai_agents_az",
       "fullName": "gyoridavid/ai_agents_az",
@@ -2158,33 +2181,11 @@
       "sources": [
         "weekly:python"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:python"
     },
     {
-      "rank": 113,
-      "owner": "spring-projects",
-      "name": "spring-boot",
-      "fullName": "spring-projects/spring-boot",
-      "url": "https://github.com/spring-projects/spring-boot",
-      "description": "Spring Boot helps you to create Spring-powered, production-grade applications and services with absolute minimum fuss.",
-      "language": "Java",
-      "stars": 81121,
-      "forks": 41986,
-      "starsToday": 468,
-      "periods": [
-        "daily",
-        "weekly",
-        "monthly"
-      ],
-      "sources": [
-        "daily:java",
-        "weekly:java",
-        "monthly:java"
-      ],
-      "source": "daily:java,weekly:java,monthly:java"
-    },
-    {
-      "rank": 114,
+      "rank": 109,
       "owner": "beclab",
       "name": "Olares",
       "fullName": "beclab/Olares",
@@ -2200,10 +2201,11 @@
       "sources": [
         "monthly:go"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:go"
     },
     {
-      "rank": 115,
+      "rank": 110,
       "owner": "bluenviron",
       "name": "mediamtx",
       "fullName": "bluenviron/mediamtx",
@@ -2219,10 +2221,11 @@
       "sources": [
         "monthly:go"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:go"
     },
     {
-      "rank": 116,
+      "rank": 111,
       "owner": "kestra-io",
       "name": "kestra",
       "fullName": "kestra-io/kestra",
@@ -2238,10 +2241,11 @@
       "sources": [
         "monthly:java"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:java"
     },
     {
-      "rank": 117,
+      "rank": 112,
       "owner": "freeok",
       "name": "so-novel",
       "fullName": "freeok/so-novel",
@@ -2257,10 +2261,11 @@
       "sources": [
         "monthly:java"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:java"
     },
     {
-      "rank": 118,
+      "rank": 113,
       "owner": "darrenhinde",
       "name": "OpenAgentsControl",
       "fullName": "darrenhinde/OpenAgentsControl",
@@ -2276,10 +2281,11 @@
       "sources": [
         "weekly:typescript"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:typescript"
     },
     {
-      "rank": 119,
+      "rank": 114,
       "owner": "microsoft",
       "name": "typescript-go",
       "fullName": "microsoft/typescript-go",
@@ -2295,10 +2301,11 @@
       "sources": [
         "weekly:go"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:go"
     },
     {
-      "rank": 120,
+      "rank": 115,
       "owner": "opensearch-project",
       "name": "OpenSearch",
       "fullName": "opensearch-project/OpenSearch",
@@ -2314,10 +2321,11 @@
       "sources": [
         "monthly:java"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:java"
     },
     {
-      "rank": 121,
+      "rank": 116,
       "owner": "LuckyOne7777",
       "name": "ChatGPT-Micro-Cap-Experiment",
       "fullName": "LuckyOne7777/ChatGPT-Micro-Cap-Experiment",
@@ -2333,10 +2341,11 @@
       "sources": [
         "weekly:python"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:python"
     },
     {
-      "rank": 122,
+      "rank": 117,
       "owner": "crewAIInc",
       "name": "crewAI",
       "fullName": "crewAIInc/crewAI",
@@ -2352,10 +2361,11 @@
       "sources": [
         "weekly:python"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:python"
     },
     {
-      "rank": 123,
+      "rank": 118,
       "owner": "mmalmi",
       "name": "nostr-vpn",
       "fullName": "mmalmi/nostr-vpn",
@@ -2371,10 +2381,11 @@
       "sources": [
         "weekly:rust"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:rust"
     },
     {
-      "rank": 124,
+      "rank": 119,
       "owner": "AUTOMATIC1111",
       "name": "stable-diffusion-webui",
       "fullName": "AUTOMATIC1111/stable-diffusion-webui",
@@ -2390,10 +2401,33 @@
       "sources": [
         "weekly:all"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:all"
     },
     {
-      "rank": 125,
+      "rank": 120,
+      "owner": "koala73",
+      "name": "worldmonitor",
+      "fullName": "koala73/worldmonitor",
+      "url": "https://github.com/koala73/worldmonitor",
+      "description": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface",
+      "language": "TypeScript",
+      "stars": 61941,
+      "forks": 9644,
+      "starsToday": 343,
+      "periods": [
+        "daily",
+        "monthly"
+      ],
+      "sources": [
+        "daily:typescript",
+        "monthly:typescript"
+      ],
+      "primaryPeriod": "daily",
+      "source": "daily:typescript,monthly:typescript"
+    },
+    {
+      "rank": 121,
       "owner": "maximhq",
       "name": "bifrost",
       "fullName": "maximhq/bifrost",
@@ -2409,10 +2443,11 @@
       "sources": [
         "weekly:go"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:go"
     },
     {
-      "rank": 126,
+      "rank": 122,
       "owner": "tulir",
       "name": "whatsmeow",
       "fullName": "tulir/whatsmeow",
@@ -2428,10 +2463,11 @@
       "sources": [
         "monthly:go"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:go"
     },
     {
-      "rank": 127,
+      "rank": 123,
       "owner": "jenkinsci",
       "name": "jenkins",
       "fullName": "jenkinsci/jenkins",
@@ -2447,10 +2483,11 @@
       "sources": [
         "monthly:java"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:java"
     },
     {
-      "rank": 128,
+      "rank": 124,
       "owner": "apache",
       "name": "maven",
       "fullName": "apache/maven",
@@ -2466,10 +2503,11 @@
       "sources": [
         "monthly:java"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:java"
     },
     {
-      "rank": 129,
+      "rank": 125,
       "owner": "badlogic",
       "name": "pi-skills",
       "fullName": "badlogic/pi-skills",
@@ -2485,10 +2523,11 @@
       "sources": [
         "daily:typescript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:typescript"
     },
     {
-      "rank": 130,
+      "rank": 126,
       "owner": "microsoft",
       "name": "agent-lightning",
       "fullName": "microsoft/agent-lightning",
@@ -2504,10 +2543,11 @@
       "sources": [
         "daily:python"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:python"
     },
     {
-      "rank": 131,
+      "rank": 127,
       "owner": "karpathy",
       "name": "nanochat",
       "fullName": "karpathy/nanochat",
@@ -2523,10 +2563,11 @@
       "sources": [
         "daily:python"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:python"
     },
     {
-      "rank": 132,
+      "rank": 128,
       "owner": "firecrawl",
       "name": "pdf-inspector",
       "fullName": "firecrawl/pdf-inspector",
@@ -2542,10 +2583,11 @@
       "sources": [
         "weekly:rust"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:rust"
     },
     {
-      "rank": 133,
+      "rank": 129,
       "owner": "webpack",
       "name": "webpack",
       "fullName": "webpack/webpack",
@@ -2561,31 +2603,11 @@
       "sources": [
         "monthly:javascript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:javascript"
     },
     {
-      "rank": 134,
-      "owner": "dataease",
-      "name": "dataease",
-      "fullName": "dataease/dataease",
-      "url": "https://github.com/dataease/dataease",
-      "description": "🔥 人人可用的开源 BI 工具，数据可视化神器。An open-source BI tool alternative to Tableau.",
-      "language": "Java",
-      "stars": 24210,
-      "forks": 4217,
-      "starsToday": 290,
-      "periods": [
-        "daily",
-        "monthly"
-      ],
-      "sources": [
-        "daily:java",
-        "monthly:java"
-      ],
-      "source": "daily:java,monthly:java"
-    },
-    {
-      "rank": 135,
+      "rank": 130,
       "owner": "masoncl",
       "name": "review-prompts",
       "fullName": "masoncl/review-prompts",
@@ -2601,10 +2623,11 @@
       "sources": [
         "daily:python"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:python"
     },
     {
-      "rank": 136,
+      "rank": 131,
       "owner": "pocketbase",
       "name": "pocketbase",
       "fullName": "pocketbase/pocketbase",
@@ -2620,19 +2643,20 @@
       "sources": [
         "weekly:go"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:go"
     },
     {
-      "rank": 137,
-      "owner": "grpc",
-      "name": "grpc-rust",
-      "fullName": "grpc/grpc-rust",
-      "url": "https://github.com/grpc/grpc-rust",
-      "description": "A native gRPC client &amp; server implementation with async/await support.",
+      "rank": 132,
+      "owner": "ai-dynamo",
+      "name": "dynamo",
+      "fullName": "ai-dynamo/dynamo",
+      "url": "https://github.com/ai-dynamo/dynamo",
+      "description": "A Datacenter Scale Distributed Inference Serving Framework",
       "language": "Rust",
-      "stars": 12295,
-      "forks": 1222,
-      "starsToday": 283,
+      "stars": 7255,
+      "forks": 1244,
+      "starsToday": 285,
       "periods": [
         "weekly",
         "monthly"
@@ -2641,10 +2665,11 @@
         "weekly:rust",
         "monthly:rust"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:rust,monthly:rust"
     },
     {
-      "rank": 138,
+      "rank": 133,
       "owner": "eslint",
       "name": "eslint",
       "fullName": "eslint/eslint",
@@ -2660,10 +2685,11 @@
       "sources": [
         "monthly:javascript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:javascript"
     },
     {
-      "rank": 139,
+      "rank": 134,
       "owner": "nexmoe",
       "name": "VidBee",
       "fullName": "nexmoe/VidBee",
@@ -2679,10 +2705,11 @@
       "sources": [
         "daily:typescript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:typescript"
     },
     {
-      "rank": 140,
+      "rank": 135,
       "owner": "masterking32",
       "name": "MasterDnsVPN",
       "fullName": "masterking32/MasterDnsVPN",
@@ -2698,10 +2725,11 @@
       "sources": [
         "weekly:go"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:go"
     },
     {
-      "rank": 141,
+      "rank": 136,
       "owner": "nautechsystems",
       "name": "nautilus_trader",
       "fullName": "nautechsystems/nautilus_trader",
@@ -2717,10 +2745,11 @@
       "sources": [
         "weekly:rust"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:rust"
     },
     {
-      "rank": 142,
+      "rank": 137,
       "owner": "Spanky96",
       "name": "glm-coding-grabber",
       "fullName": "Spanky96/glm-coding-grabber",
@@ -2736,10 +2765,11 @@
       "sources": [
         "monthly:javascript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:javascript"
     },
     {
-      "rank": 143,
+      "rank": 138,
       "owner": "OpenBMB",
       "name": "ChatDev",
       "fullName": "OpenBMB/ChatDev",
@@ -2757,10 +2787,11 @@
         "daily:python",
         "weekly:python"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:python,weekly:python"
     },
     {
-      "rank": 144,
+      "rank": 139,
       "owner": "tradesdontlie",
       "name": "tradingview-mcp",
       "fullName": "tradesdontlie/tradingview-mcp",
@@ -2776,10 +2807,11 @@
       "sources": [
         "weekly:javascript"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:javascript"
     },
     {
-      "rank": 145,
+      "rank": 140,
       "owner": "ashishps1",
       "name": "awesome-low-level-design",
       "fullName": "ashishps1/awesome-low-level-design",
@@ -2795,10 +2827,33 @@
       "sources": [
         "weekly:java"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:java"
     },
     {
-      "rank": 146,
+      "rank": 141,
+      "owner": "ast-grep",
+      "name": "ast-grep",
+      "fullName": "ast-grep/ast-grep",
+      "url": "https://github.com/ast-grep/ast-grep",
+      "description": "⚡A CLI tool for code structural search, lint and rewriting. Written in Rust",
+      "language": "Rust",
+      "stars": 14508,
+      "forks": 394,
+      "starsToday": 205,
+      "periods": [
+        "weekly",
+        "monthly"
+      ],
+      "sources": [
+        "weekly:rust",
+        "monthly:rust"
+      ],
+      "primaryPeriod": "weekly",
+      "source": "weekly:rust,monthly:rust"
+    },
+    {
+      "rank": 142,
       "owner": "YunaiV",
       "name": "ruoyi-vue-pro",
       "fullName": "YunaiV/ruoyi-vue-pro",
@@ -2814,10 +2869,11 @@
       "sources": [
         "weekly:java"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:java"
     },
     {
-      "rank": 147,
+      "rank": 143,
       "owner": "mostlygeek",
       "name": "llama-swap",
       "fullName": "mostlygeek/llama-swap",
@@ -2833,10 +2889,11 @@
       "sources": [
         "weekly:go"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:go"
     },
     {
-      "rank": 148,
+      "rank": 144,
       "owner": "gastownhall",
       "name": "gascity",
       "fullName": "gastownhall/gascity",
@@ -2852,10 +2909,11 @@
       "sources": [
         "weekly:go"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:go"
     },
     {
-      "rank": 149,
+      "rank": 145,
       "owner": "cli",
       "name": "cli",
       "fullName": "cli/cli",
@@ -2871,10 +2929,11 @@
       "sources": [
         "weekly:go"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:go"
     },
     {
-      "rank": 150,
+      "rank": 146,
       "owner": "FB208",
       "name": "OpenBidKit_Yibiao",
       "fullName": "FB208/OpenBidKit_Yibiao",
@@ -2890,10 +2949,11 @@
       "sources": [
         "weekly:javascript"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:javascript"
     },
     {
-      "rank": 151,
+      "rank": 147,
       "owner": "base",
       "name": "base",
       "fullName": "base/base",
@@ -2909,10 +2969,11 @@
       "sources": [
         "monthly:rust"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:rust"
     },
     {
-      "rank": 152,
+      "rank": 148,
       "owner": "alibaba",
       "name": "nacos",
       "fullName": "alibaba/nacos",
@@ -2928,10 +2989,11 @@
       "sources": [
         "monthly:java"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:java"
     },
     {
-      "rank": 153,
+      "rank": 149,
       "owner": "EasyTier",
       "name": "EasyTier",
       "fullName": "EasyTier/EasyTier",
@@ -2947,10 +3009,11 @@
       "sources": [
         "weekly:rust"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:rust"
     },
     {
-      "rank": 154,
+      "rank": 150,
       "owner": "modelcontextprotocol",
       "name": "java-sdk",
       "fullName": "modelcontextprotocol/java-sdk",
@@ -2966,10 +3029,11 @@
       "sources": [
         "monthly:java"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:java"
     },
     {
-      "rank": 155,
+      "rank": 151,
       "owner": "bevyengine",
       "name": "bevy",
       "fullName": "bevyengine/bevy",
@@ -2985,10 +3049,11 @@
       "sources": [
         "weekly:rust"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:rust"
     },
     {
-      "rank": 156,
+      "rank": 152,
       "owner": "QwenLM",
       "name": "Qwen-Image",
       "fullName": "QwenLM/Qwen-Image",
@@ -3004,10 +3069,11 @@
       "sources": [
         "weekly:python"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:python"
     },
     {
-      "rank": 157,
+      "rank": 153,
       "owner": "fbsamples",
       "name": "whatsapp-business-jaspers-market",
       "fullName": "fbsamples/whatsapp-business-jaspers-market",
@@ -3023,10 +3089,11 @@
       "sources": [
         "monthly:javascript"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:javascript"
     },
     {
-      "rank": 158,
+      "rank": 154,
       "owner": "screenpipe",
       "name": "screenpipe",
       "fullName": "screenpipe/screenpipe",
@@ -3042,33 +3109,11 @@
       "sources": [
         "weekly:rust"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:rust"
     },
     {
-      "rank": 159,
-      "owner": "apache",
-      "name": "cassandra",
-      "fullName": "apache/cassandra",
-      "url": "https://github.com/apache/cassandra",
-      "description": "Open source transactional distributed database. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure without compromising performance.",
-      "language": "Java",
-      "stars": 9858,
-      "forks": 3949,
-      "starsToday": 155,
-      "periods": [
-        "daily",
-        "weekly",
-        "monthly"
-      ],
-      "sources": [
-        "daily:java",
-        "weekly:java",
-        "monthly:java"
-      ],
-      "source": "daily:java,weekly:java,monthly:java"
-    },
-    {
-      "rank": 160,
+      "rank": 155,
       "owner": "TheAlgorithms",
       "name": "Python",
       "fullName": "TheAlgorithms/Python",
@@ -3084,10 +3129,11 @@
       "sources": [
         "daily:all"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:all"
     },
     {
-      "rank": 161,
+      "rank": 156,
       "owner": "block",
       "name": "goose",
       "fullName": "block/goose",
@@ -3103,10 +3149,11 @@
       "sources": [
         "daily:rust"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:rust"
     },
     {
-      "rank": 162,
+      "rank": 157,
       "owner": "aquasecurity",
       "name": "trivy",
       "fullName": "aquasecurity/trivy",
@@ -3122,10 +3169,11 @@
       "sources": [
         "daily:go"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:go"
     },
     {
-      "rank": 163,
+      "rank": 158,
       "owner": "denoland",
       "name": "deno",
       "fullName": "denoland/deno",
@@ -3141,10 +3189,11 @@
       "sources": [
         "weekly:rust"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:rust"
     },
     {
-      "rank": 164,
+      "rank": 159,
       "owner": "xpzouying",
       "name": "xiaohongshu-mcp",
       "fullName": "xpzouying/xiaohongshu-mcp",
@@ -3160,10 +3209,11 @@
       "sources": [
         "daily:go"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:go"
     },
     {
-      "rank": 165,
+      "rank": 160,
       "owner": "LaurieWired",
       "name": "GhidraMCP",
       "fullName": "LaurieWired/GhidraMCP",
@@ -3179,10 +3229,11 @@
       "sources": [
         "weekly:java"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:java"
     },
     {
-      "rank": 166,
+      "rank": 161,
       "owner": "Shubhamsaboo",
       "name": "awesome-llm-apps",
       "fullName": "Shubhamsaboo/awesome-llm-apps",
@@ -3198,10 +3249,11 @@
       "sources": [
         "daily:all"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:all"
     },
     {
-      "rank": 167,
+      "rank": 162,
       "owner": "TauricResearch",
       "name": "TradingAgents",
       "fullName": "TauricResearch/TradingAgents",
@@ -3217,10 +3269,33 @@
       "sources": [
         "daily:python"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:python"
     },
     {
-      "rank": 168,
+      "rank": 163,
+      "owner": "grpc",
+      "name": "grpc-rust",
+      "fullName": "grpc/grpc-rust",
+      "url": "https://github.com/grpc/grpc-rust",
+      "description": "A native gRPC client &amp; server implementation with async/await support.",
+      "language": "Rust",
+      "stars": 12295,
+      "forks": 1222,
+      "starsToday": 130,
+      "periods": [
+        "weekly",
+        "monthly"
+      ],
+      "sources": [
+        "weekly:rust",
+        "monthly:rust"
+      ],
+      "primaryPeriod": "weekly",
+      "source": "weekly:rust,monthly:rust"
+    },
+    {
+      "rank": 164,
       "owner": "krillinai",
       "name": "KrillinAI",
       "fullName": "krillinai/KrillinAI",
@@ -3236,10 +3311,11 @@
       "sources": [
         "daily:go"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:go"
     },
     {
-      "rank": 169,
+      "rank": 165,
       "owner": "xandergos",
       "name": "terrain-diffusion-mc",
       "fullName": "xandergos/terrain-diffusion-mc",
@@ -3255,10 +3331,11 @@
       "sources": [
         "weekly:java"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:java"
     },
     {
-      "rank": 170,
+      "rank": 166,
       "owner": "QwenLM",
       "name": "Qwen3-Coder",
       "fullName": "QwenLM/Qwen3-Coder",
@@ -3274,31 +3351,33 @@
       "sources": [
         "daily:python"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:python"
     },
     {
-      "rank": 171,
-      "owner": "apache",
-      "name": "flink",
-      "fullName": "apache/flink",
-      "url": "https://github.com/apache/flink",
-      "description": "Apache Flink",
-      "language": "Java",
-      "stars": 26182,
-      "forks": 13994,
-      "starsToday": 122,
+      "rank": 167,
+      "owner": "Wei-Shaw",
+      "name": "sub2api",
+      "fullName": "Wei-Shaw/sub2api",
+      "url": "https://github.com/Wei-Shaw/sub2api",
+      "description": "Sub2API-CRS2 一站式开源中转服务，让 Claude、Openai 、Gemini、Antigravity订阅统一接入，支持拼车共享，更高效分摊成本，原生工具无缝使用。",
+      "language": "Go",
+      "stars": 16294,
+      "forks": 2878,
+      "starsToday": 113,
       "periods": [
-        "weekly",
-        "monthly"
+        "daily",
+        "weekly"
       ],
       "sources": [
-        "weekly:java",
-        "monthly:java"
+        "daily:go",
+        "weekly:go"
       ],
-      "source": "weekly:java,monthly:java"
+      "primaryPeriod": "daily",
+      "source": "daily:go,weekly:go"
     },
     {
-      "rank": 172,
+      "rank": 168,
       "owner": "resend",
       "name": "react-email",
       "fullName": "resend/react-email",
@@ -3314,10 +3393,11 @@
       "sources": [
         "daily:typescript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:typescript"
     },
     {
-      "rank": 173,
+      "rank": 169,
       "owner": "confident-ai",
       "name": "deepeval",
       "fullName": "confident-ai/deepeval",
@@ -3333,10 +3413,11 @@
       "sources": [
         "daily:python"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:python"
     },
     {
-      "rank": 174,
+      "rank": 170,
       "owner": "pingdotgg",
       "name": "t3code",
       "fullName": "pingdotgg/t3code",
@@ -3352,10 +3433,11 @@
       "sources": [
         "daily:typescript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:typescript"
     },
     {
-      "rank": 175,
+      "rank": 171,
       "owner": "crimera",
       "name": "piko",
       "fullName": "crimera/piko",
@@ -3371,10 +3453,11 @@
       "sources": [
         "weekly:java"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:java"
     },
     {
-      "rank": 176,
+      "rank": 172,
       "owner": "google",
       "name": "guava",
       "fullName": "google/guava",
@@ -3390,10 +3473,11 @@
       "sources": [
         "monthly:java"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:java"
     },
     {
-      "rank": 177,
+      "rank": 173,
       "owner": "microg",
       "name": "GmsCore",
       "fullName": "microg/GmsCore",
@@ -3409,10 +3493,11 @@
       "sources": [
         "weekly:java"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:java"
     },
     {
-      "rank": 178,
+      "rank": 174,
       "owner": "raphaelmansuy",
       "name": "edgequake",
       "fullName": "raphaelmansuy/edgequake",
@@ -3428,10 +3513,11 @@
       "sources": [
         "daily:rust"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:rust"
     },
     {
-      "rank": 179,
+      "rank": 175,
       "owner": "Lightricks",
       "name": "LTX-Video",
       "fullName": "Lightricks/LTX-Video",
@@ -3447,10 +3533,11 @@
       "sources": [
         "weekly:python"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:python"
     },
     {
-      "rank": 180,
+      "rank": 176,
       "owner": "backstage",
       "name": "backstage",
       "fullName": "backstage/backstage",
@@ -3466,10 +3553,11 @@
       "sources": [
         "weekly:typescript"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:typescript"
     },
     {
-      "rank": 181,
+      "rank": 177,
       "owner": "conductor-oss",
       "name": "conductor",
       "fullName": "conductor-oss/conductor",
@@ -3485,10 +3573,11 @@
       "sources": [
         "weekly:java"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:java"
     },
     {
-      "rank": 182,
+      "rank": 178,
       "owner": "microsoft",
       "name": "qlib",
       "fullName": "microsoft/qlib",
@@ -3504,10 +3593,11 @@
       "sources": [
         "daily:python"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:python"
     },
     {
-      "rank": 183,
+      "rank": 179,
       "owner": "yangshun",
       "name": "tech-interview-handbook",
       "fullName": "yangshun/tech-interview-handbook",
@@ -3523,10 +3613,11 @@
       "sources": [
         "daily:typescript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:typescript"
     },
     {
-      "rank": 184,
+      "rank": 180,
       "owner": "datawhalechina",
       "name": "easy-vibe",
       "fullName": "datawhalechina/easy-vibe",
@@ -3542,10 +3633,11 @@
       "sources": [
         "daily:javascript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:javascript"
     },
     {
-      "rank": 185,
+      "rank": 181,
       "owner": "CodeWithHarry",
       "name": "Sigma-Web-Dev-Course",
       "fullName": "CodeWithHarry/Sigma-Web-Dev-Course",
@@ -3561,10 +3653,11 @@
       "sources": [
         "weekly:javascript"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:javascript"
     },
     {
-      "rank": 186,
+      "rank": 182,
       "owner": "mui",
       "name": "material-ui",
       "fullName": "mui/material-ui",
@@ -3580,10 +3673,11 @@
       "sources": [
         "weekly:javascript"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:javascript"
     },
     {
-      "rank": 187,
+      "rank": 183,
       "owner": "hashicorp",
       "name": "vault",
       "fullName": "hashicorp/vault",
@@ -3599,10 +3693,11 @@
       "sources": [
         "weekly:go"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:go"
     },
     {
-      "rank": 188,
+      "rank": 184,
       "owner": "ageerle",
       "name": "ruoyi-ai",
       "fullName": "ageerle/ruoyi-ai",
@@ -3618,10 +3713,11 @@
       "sources": [
         "weekly:java"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:java"
     },
     {
-      "rank": 189,
+      "rank": 185,
       "owner": "usebruno",
       "name": "bruno",
       "fullName": "usebruno/bruno",
@@ -3637,10 +3733,11 @@
       "sources": [
         "daily:javascript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:javascript"
     },
     {
-      "rank": 190,
+      "rank": 186,
       "owner": "Stremio",
       "name": "stremio-core",
       "fullName": "Stremio/stremio-core",
@@ -3656,10 +3753,11 @@
       "sources": [
         "weekly:rust"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:rust"
     },
     {
-      "rank": 191,
+      "rank": 187,
       "owner": "moby",
       "name": "moby",
       "fullName": "moby/moby",
@@ -3675,10 +3773,11 @@
       "sources": [
         "weekly:go"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:go"
     },
     {
-      "rank": 192,
+      "rank": 188,
       "owner": "pingcap",
       "name": "tidb",
       "fullName": "pingcap/tidb",
@@ -3694,10 +3793,11 @@
       "sources": [
         "weekly:go"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:go"
     },
     {
-      "rank": 193,
+      "rank": 189,
       "owner": "apache",
       "name": "hadoop",
       "fullName": "apache/hadoop",
@@ -3713,10 +3813,11 @@
       "sources": [
         "monthly:java"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:java"
     },
     {
-      "rank": 194,
+      "rank": 190,
       "owner": "onlook-dev",
       "name": "onlook",
       "fullName": "onlook-dev/onlook",
@@ -3732,10 +3833,11 @@
       "sources": [
         "daily:typescript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:typescript"
     },
     {
-      "rank": 195,
+      "rank": 191,
       "owner": "disler",
       "name": "claude-code-hooks-mastery",
       "fullName": "disler/claude-code-hooks-mastery",
@@ -3751,31 +3853,11 @@
       "sources": [
         "daily:python"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:python"
     },
     {
-      "rank": 196,
-      "owner": "spring-projects",
-      "name": "spring-framework",
-      "fullName": "spring-projects/spring-framework",
-      "url": "https://github.com/spring-projects/spring-framework",
-      "description": "Spring Framework",
-      "language": "Java",
-      "stars": 59882,
-      "forks": 38840,
-      "starsToday": 46,
-      "periods": [
-        "daily",
-        "weekly"
-      ],
-      "sources": [
-        "daily:java",
-        "weekly:java"
-      ],
-      "source": "daily:java,weekly:java"
-    },
-    {
-      "rank": 197,
+      "rank": 192,
       "owner": "648540858",
       "name": "wvp-GB28181-pro",
       "fullName": "648540858/wvp-GB28181-pro",
@@ -3791,10 +3873,11 @@
       "sources": [
         "weekly:java"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:java"
     },
     {
-      "rank": 198,
+      "rank": 193,
       "owner": "songquanpeng",
       "name": "one-api",
       "fullName": "songquanpeng/one-api",
@@ -3810,10 +3893,11 @@
       "sources": [
         "daily:javascript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:javascript"
     },
     {
-      "rank": 199,
+      "rank": 194,
       "owner": "Dokploy",
       "name": "dokploy",
       "fullName": "Dokploy/dokploy",
@@ -3829,10 +3913,11 @@
       "sources": [
         "daily:typescript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:typescript"
     },
     {
-      "rank": 200,
+      "rank": 195,
       "owner": "google",
       "name": "gson",
       "fullName": "google/gson",
@@ -3848,10 +3933,11 @@
       "sources": [
         "monthly:java"
       ],
+      "primaryPeriod": "monthly",
       "source": "monthly:java"
     },
     {
-      "rank": 201,
+      "rank": 196,
       "owner": "Creators-of-Create",
       "name": "Create",
       "fullName": "Creators-of-Create/Create",
@@ -3867,10 +3953,11 @@
       "sources": [
         "weekly:java"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:java"
     },
     {
-      "rank": 202,
+      "rank": 197,
       "owner": "xerrors",
       "name": "Yuxi-Know",
       "fullName": "xerrors/Yuxi-Know",
@@ -3886,10 +3973,11 @@
       "sources": [
         "daily:all"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:all"
     },
     {
-      "rank": 203,
+      "rank": 198,
       "owner": "go-git",
       "name": "go-git",
       "fullName": "go-git/go-git",
@@ -3905,10 +3993,11 @@
       "sources": [
         "weekly:go"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:go"
     },
     {
-      "rank": 204,
+      "rank": 199,
       "owner": "zhayujie",
       "name": "chatgpt-on-wechat",
       "fullName": "zhayujie/chatgpt-on-wechat",
@@ -3924,10 +4013,11 @@
       "sources": [
         "daily:python"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:python"
     },
     {
-      "rank": 205,
+      "rank": 200,
       "owner": "runatlantis",
       "name": "atlantis",
       "fullName": "runatlantis/atlantis",
@@ -3943,10 +4033,11 @@
       "sources": [
         "weekly:go"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:go"
     },
     {
-      "rank": 206,
+      "rank": 201,
       "owner": "DaKheera47",
       "name": "job-ops",
       "fullName": "DaKheera47/job-ops",
@@ -3962,10 +4053,33 @@
       "sources": [
         "daily:typescript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:typescript"
     },
     {
-      "rank": 207,
+      "rank": 202,
+      "owner": "apache",
+      "name": "flink",
+      "fullName": "apache/flink",
+      "url": "https://github.com/apache/flink",
+      "description": "Apache Flink",
+      "language": "Java",
+      "stars": 26182,
+      "forks": 13994,
+      "starsToday": 30,
+      "periods": [
+        "weekly",
+        "monthly"
+      ],
+      "sources": [
+        "weekly:java",
+        "monthly:java"
+      ],
+      "primaryPeriod": "weekly",
+      "source": "weekly:java,monthly:java"
+    },
+    {
+      "rank": 203,
       "owner": "coreybutler",
       "name": "nvm-windows",
       "fullName": "coreybutler/nvm-windows",
@@ -3981,10 +4095,11 @@
       "sources": [
         "daily:go"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:go"
     },
     {
-      "rank": 208,
+      "rank": 204,
       "owner": "looplj",
       "name": "axonhub",
       "fullName": "looplj/axonhub",
@@ -4000,31 +4115,11 @@
       "sources": [
         "daily:go"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:go"
     },
     {
-      "rank": 209,
-      "owner": "Dev4Mod",
-      "name": "WaEnhancer",
-      "fullName": "Dev4Mod/WaEnhancer",
-      "url": "https://github.com/Dev4Mod/WaEnhancer",
-      "description": "WhatsApp tools for Android",
-      "language": "Java",
-      "stars": 1405,
-      "forks": 187,
-      "starsToday": 28,
-      "periods": [
-        "daily",
-        "weekly"
-      ],
-      "sources": [
-        "daily:java",
-        "weekly:java"
-      ],
-      "source": "daily:java,weekly:java"
-    },
-    {
-      "rank": 210,
+      "rank": 205,
       "owner": "go-task",
       "name": "task",
       "fullName": "go-task/task",
@@ -4040,10 +4135,11 @@
       "sources": [
         "daily:go"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:go"
     },
     {
-      "rank": 211,
+      "rank": 206,
       "owner": "pipecat-ai",
       "name": "pipecat",
       "fullName": "pipecat-ai/pipecat",
@@ -4059,10 +4155,11 @@
       "sources": [
         "daily:python"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:python"
     },
     {
-      "rank": 212,
+      "rank": 207,
       "owner": "Snailclimb",
       "name": "interview-guide",
       "fullName": "Snailclimb/interview-guide",
@@ -4078,10 +4175,11 @@
       "sources": [
         "daily:java"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:java"
     },
     {
-      "rank": 213,
+      "rank": 208,
       "owner": "zs1083339604",
       "name": "FaceWinUnlock-Tauri",
       "fullName": "zs1083339604/FaceWinUnlock-Tauri",
@@ -4097,10 +4195,11 @@
       "sources": [
         "daily:rust"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:rust"
     },
     {
-      "rank": 214,
+      "rank": 209,
       "owner": "WebGoat",
       "name": "WebGoat",
       "fullName": "WebGoat/WebGoat",
@@ -4116,10 +4215,11 @@
       "sources": [
         "daily:javascript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:javascript"
     },
     {
-      "rank": 215,
+      "rank": 210,
       "owner": "cloudflare",
       "name": "pingora",
       "fullName": "cloudflare/pingora",
@@ -4135,10 +4235,11 @@
       "sources": [
         "daily:rust"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:rust"
     },
     {
-      "rank": 216,
+      "rank": 211,
       "owner": "espanso",
       "name": "espanso",
       "fullName": "espanso/espanso",
@@ -4154,10 +4255,11 @@
       "sources": [
         "daily:rust"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:rust"
     },
     {
-      "rank": 217,
+      "rank": 212,
       "owner": "marlocarlo",
       "name": "psmux",
       "fullName": "marlocarlo/psmux",
@@ -4173,10 +4275,11 @@
       "sources": [
         "daily:rust"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:rust"
     },
     {
-      "rank": 218,
+      "rank": 213,
       "owner": "alibaba",
       "name": "spring-ai-alibaba",
       "fullName": "alibaba/spring-ai-alibaba",
@@ -4192,10 +4295,11 @@
       "sources": [
         "daily:java"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:java"
     },
     {
-      "rank": 219,
+      "rank": 214,
       "owner": "samber",
       "name": "lo",
       "fullName": "samber/lo",
@@ -4211,10 +4315,35 @@
       "sources": [
         "daily:go"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:go"
     },
     {
-      "rank": 220,
+      "rank": 215,
+      "owner": "spring-projects",
+      "name": "spring-boot",
+      "fullName": "spring-projects/spring-boot",
+      "url": "https://github.com/spring-projects/spring-boot",
+      "description": "Spring Boot helps you to create Spring-powered, production-grade applications and services with absolute minimum fuss.",
+      "language": "Java",
+      "stars": 81121,
+      "forks": 41986,
+      "starsToday": 14,
+      "periods": [
+        "daily",
+        "weekly",
+        "monthly"
+      ],
+      "sources": [
+        "daily:java",
+        "weekly:java",
+        "monthly:java"
+      ],
+      "primaryPeriod": "daily",
+      "source": "daily:java,weekly:java,monthly:java"
+    },
+    {
+      "rank": 216,
       "owner": "AtsushiSakai",
       "name": "PythonRobotics",
       "fullName": "AtsushiSakai/PythonRobotics",
@@ -4230,10 +4359,11 @@
       "sources": [
         "daily:python"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:python"
     },
     {
-      "rank": 221,
+      "rank": 217,
       "owner": "gfx-rs",
       "name": "wgpu",
       "fullName": "gfx-rs/wgpu",
@@ -4249,10 +4379,11 @@
       "sources": [
         "daily:rust"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:rust"
     },
     {
-      "rank": 222,
+      "rank": 218,
       "owner": "grab",
       "name": "cursor-talk-to-figma-mcp",
       "fullName": "grab/cursor-talk-to-figma-mcp",
@@ -4268,10 +4399,11 @@
       "sources": [
         "daily:javascript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:javascript"
     },
     {
-      "rank": 223,
+      "rank": 219,
       "owner": "dagster-io",
       "name": "dagster",
       "fullName": "dagster-io/dagster",
@@ -4287,10 +4419,11 @@
       "sources": [
         "daily:python"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:python"
     },
     {
-      "rank": 224,
+      "rank": 220,
       "owner": "VictoriaMetrics",
       "name": "VictoriaMetrics",
       "fullName": "VictoriaMetrics/VictoriaMetrics",
@@ -4306,10 +4439,11 @@
       "sources": [
         "daily:go"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:go"
     },
     {
-      "rank": 225,
+      "rank": 221,
       "owner": "lima-vm",
       "name": "lima",
       "fullName": "lima-vm/lima",
@@ -4325,10 +4459,11 @@
       "sources": [
         "daily:go"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:go"
     },
     {
-      "rank": 226,
+      "rank": 222,
       "owner": "alibaba",
       "name": "higress",
       "fullName": "alibaba/higress",
@@ -4344,10 +4479,11 @@
       "sources": [
         "daily:go"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:go"
     },
     {
-      "rank": 227,
+      "rank": 223,
       "owner": "CesiumGS",
       "name": "cesium",
       "fullName": "CesiumGS/cesium",
@@ -4363,10 +4499,11 @@
       "sources": [
         "daily:javascript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:javascript"
     },
     {
-      "rank": 228,
+      "rank": 224,
       "owner": "cert-manager",
       "name": "cert-manager",
       "fullName": "cert-manager/cert-manager",
@@ -4382,10 +4519,11 @@
       "sources": [
         "daily:go"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:go"
     },
     {
-      "rank": 229,
+      "rank": 225,
       "owner": "is-a-dev",
       "name": "register",
       "fullName": "is-a-dev/register",
@@ -4401,10 +4539,11 @@
       "sources": [
         "daily:javascript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:javascript"
     },
     {
-      "rank": 230,
+      "rank": 226,
       "owner": "Acode-Foundation",
       "name": "Acode",
       "fullName": "Acode-Foundation/Acode",
@@ -4420,10 +4559,11 @@
       "sources": [
         "daily:javascript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:javascript"
     },
     {
-      "rank": 231,
+      "rank": 227,
       "owner": "gin-gonic",
       "name": "gin",
       "fullName": "gin-gonic/gin",
@@ -4439,10 +4579,11 @@
       "sources": [
         "daily:go"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:go"
     },
     {
-      "rank": 232,
+      "rank": 228,
       "owner": "OpenAPITools",
       "name": "openapi-generator",
       "fullName": "OpenAPITools/openapi-generator",
@@ -4458,10 +4599,33 @@
       "sources": [
         "daily:java"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:java"
     },
     {
-      "rank": 233,
+      "rank": 229,
+      "owner": "dataease",
+      "name": "dataease",
+      "fullName": "dataease/dataease",
+      "url": "https://github.com/dataease/dataease",
+      "description": "🔥 人人可用的开源 BI 工具，数据可视化神器。An open-source BI tool alternative to Tableau.",
+      "language": "Java",
+      "stars": 24210,
+      "forks": 4217,
+      "starsToday": 9,
+      "periods": [
+        "daily",
+        "monthly"
+      ],
+      "sources": [
+        "daily:java",
+        "monthly:java"
+      ],
+      "primaryPeriod": "daily",
+      "source": "daily:java,monthly:java"
+    },
+    {
+      "rank": 230,
       "owner": "foundry-rs",
       "name": "foundry",
       "fullName": "foundry-rs/foundry",
@@ -4477,10 +4641,11 @@
       "sources": [
         "daily:rust"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:rust"
     },
     {
-      "rank": 234,
+      "rank": 231,
       "owner": "spf13",
       "name": "cobra",
       "fullName": "spf13/cobra",
@@ -4496,10 +4661,11 @@
       "sources": [
         "daily:go"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:go"
     },
     {
-      "rank": 235,
+      "rank": 232,
       "owner": "novnc",
       "name": "noVNC",
       "fullName": "novnc/noVNC",
@@ -4515,10 +4681,11 @@
       "sources": [
         "daily:javascript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:javascript"
     },
     {
-      "rank": 236,
+      "rank": 233,
       "owner": "zeromicro",
       "name": "go-zero",
       "fullName": "zeromicro/go-zero",
@@ -4534,10 +4701,11 @@
       "sources": [
         "daily:go"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:go"
     },
     {
-      "rank": 237,
+      "rank": 234,
       "owner": "DrKLO",
       "name": "Telegram",
       "fullName": "DrKLO/Telegram",
@@ -4553,10 +4721,11 @@
       "sources": [
         "daily:java"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:java"
     },
     {
-      "rank": 238,
+      "rank": 235,
       "owner": "apache",
       "name": "doris",
       "fullName": "apache/doris",
@@ -4572,10 +4741,11 @@
       "sources": [
         "daily:java"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:java"
     },
     {
-      "rank": 239,
+      "rank": 236,
       "owner": "formbricks",
       "name": "formbricks",
       "fullName": "formbricks/formbricks",
@@ -4591,10 +4761,11 @@
       "sources": [
         "daily:typescript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:typescript"
     },
     {
-      "rank": 240,
+      "rank": 237,
       "owner": "open-telemetry",
       "name": "opentelemetry-collector",
       "fullName": "open-telemetry/opentelemetry-collector",
@@ -4610,10 +4781,33 @@
       "sources": [
         "daily:go"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:go"
     },
     {
-      "rank": 241,
+      "rank": 238,
+      "owner": "spring-projects",
+      "name": "spring-framework",
+      "fullName": "spring-projects/spring-framework",
+      "url": "https://github.com/spring-projects/spring-framework",
+      "description": "Spring Framework",
+      "language": "Java",
+      "stars": 59882,
+      "forks": 38840,
+      "starsToday": 6,
+      "periods": [
+        "daily",
+        "weekly"
+      ],
+      "sources": [
+        "daily:java",
+        "weekly:java"
+      ],
+      "primaryPeriod": "daily",
+      "source": "daily:java,weekly:java"
+    },
+    {
+      "rank": 239,
       "owner": "redis",
       "name": "go-redis",
       "fullName": "redis/go-redis",
@@ -4629,10 +4823,11 @@
       "sources": [
         "daily:go"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:go"
     },
     {
-      "rank": 242,
+      "rank": 240,
       "owner": "be5invis",
       "name": "Iosevka",
       "fullName": "be5invis/Iosevka",
@@ -4648,10 +4843,11 @@
       "sources": [
         "daily:javascript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:javascript"
     },
     {
-      "rank": 243,
+      "rank": 241,
       "owner": "lodash",
       "name": "lodash",
       "fullName": "lodash/lodash",
@@ -4667,10 +4863,11 @@
       "sources": [
         "daily:javascript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:javascript"
     },
     {
-      "rank": 244,
+      "rank": 242,
       "owner": "jaegertracing",
       "name": "jaeger",
       "fullName": "jaegertracing/jaeger",
@@ -4686,10 +4883,11 @@
       "sources": [
         "daily:go"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:go"
     },
     {
-      "rank": 245,
+      "rank": 243,
       "owner": "npm",
       "name": "cli",
       "fullName": "npm/cli",
@@ -4705,10 +4903,11 @@
       "sources": [
         "daily:javascript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:javascript"
     },
     {
-      "rank": 246,
+      "rank": 244,
       "owner": "spring-ai-community",
       "name": "spring-ai-agent-utils",
       "fullName": "spring-ai-community/spring-ai-agent-utils",
@@ -4724,10 +4923,11 @@
       "sources": [
         "daily:java"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:java"
     },
     {
-      "rank": 247,
+      "rank": 245,
       "owner": "trinodb",
       "name": "trino",
       "fullName": "trinodb/trino",
@@ -4743,10 +4943,11 @@
       "sources": [
         "daily:java"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:java"
     },
     {
-      "rank": 248,
+      "rank": 246,
       "owner": "kubernetes-sigs",
       "name": "kueue",
       "fullName": "kubernetes-sigs/kueue",
@@ -4762,10 +4963,11 @@
       "sources": [
         "daily:go"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:go"
     },
     {
-      "rank": 249,
+      "rank": 247,
       "owner": "alibaba",
       "name": "DataX",
       "fullName": "alibaba/DataX",
@@ -4781,10 +4983,35 @@
       "sources": [
         "daily:java"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:java"
     },
     {
-      "rank": 250,
+      "rank": 248,
+      "owner": "apache",
+      "name": "cassandra",
+      "fullName": "apache/cassandra",
+      "url": "https://github.com/apache/cassandra",
+      "description": "Open source transactional distributed database. Linear scalability and proven fault-tolerance on commodity hardware or cloud infrastructure without compromising performance.",
+      "language": "Java",
+      "stars": 9858,
+      "forks": 3949,
+      "starsToday": 3,
+      "periods": [
+        "daily",
+        "weekly",
+        "monthly"
+      ],
+      "sources": [
+        "daily:java",
+        "weekly:java",
+        "monthly:java"
+      ],
+      "primaryPeriod": "daily",
+      "source": "daily:java,weekly:java,monthly:java"
+    },
+    {
+      "rank": 249,
       "owner": "aeron-io",
       "name": "aeron",
       "fullName": "aeron-io/aeron",
@@ -4800,10 +5027,11 @@
       "sources": [
         "daily:java"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:java"
     },
     {
-      "rank": 251,
+      "rank": 250,
       "owner": "alvr-org",
       "name": "ALVR",
       "fullName": "alvr-org/ALVR",
@@ -4819,10 +5047,11 @@
       "sources": [
         "daily:rust"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:rust"
     },
     {
-      "rank": 252,
+      "rank": 251,
       "owner": "atlassian",
       "name": "atlassian-mcp-server",
       "fullName": "atlassian/atlassian-mcp-server",
@@ -4838,10 +5067,11 @@
       "sources": [
         "daily:javascript"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:javascript"
     },
     {
-      "rank": 253,
+      "rank": 252,
       "owner": "spring-projects",
       "name": "spring-security",
       "fullName": "spring-projects/spring-security",
@@ -4857,10 +5087,11 @@
       "sources": [
         "daily:java"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:java"
     },
     {
-      "rank": 254,
+      "rank": 253,
       "owner": "open-telemetry",
       "name": "opentelemetry-go",
       "fullName": "open-telemetry/opentelemetry-go",
@@ -4876,10 +5107,11 @@
       "sources": [
         "daily:go"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:go"
     },
     {
-      "rank": 255,
+      "rank": 254,
       "owner": "apache",
       "name": "nifi",
       "fullName": "apache/nifi",
@@ -4895,10 +5127,11 @@
       "sources": [
         "daily:java"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:java"
     },
     {
-      "rank": 256,
+      "rank": 255,
       "owner": "apache",
       "name": "dolphinscheduler",
       "fullName": "apache/dolphinscheduler",
@@ -4914,10 +5147,11 @@
       "sources": [
         "daily:java"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:java"
     },
     {
-      "rank": 257,
+      "rank": 256,
       "owner": "apache",
       "name": "beam",
       "fullName": "apache/beam",
@@ -4933,10 +5167,11 @@
       "sources": [
         "daily:java"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:java"
     },
     {
-      "rank": 258,
+      "rank": 257,
       "owner": "apache",
       "name": "pinot",
       "fullName": "apache/pinot",
@@ -4952,10 +5187,11 @@
       "sources": [
         "weekly:java"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:java"
     },
     {
-      "rank": 259,
+      "rank": 258,
       "owner": "spaceandtimefdn",
       "name": "sxt-proof-of-sql",
       "fullName": "spaceandtimefdn/sxt-proof-of-sql",
@@ -4971,10 +5207,11 @@
       "sources": [
         "weekly:rust"
       ],
+      "primaryPeriod": "weekly",
       "source": "weekly:rust"
     },
     {
-      "rank": 260,
+      "rank": 259,
       "owner": "apache",
       "name": "hbase",
       "fullName": "apache/hbase",
@@ -4990,10 +5227,11 @@
       "sources": [
         "daily:java"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:java"
     },
     {
-      "rank": 261,
+      "rank": 260,
       "owner": "liferay",
       "name": "liferay-portal",
       "fullName": "liferay/liferay-portal",
@@ -5009,10 +5247,33 @@
       "sources": [
         "daily:java"
       ],
+      "primaryPeriod": "daily",
       "source": "daily:java"
+    },
+    {
+      "rank": 261,
+      "owner": "Dev4Mod",
+      "name": "WaEnhancer",
+      "fullName": "Dev4Mod/WaEnhancer",
+      "url": "https://github.com/Dev4Mod/WaEnhancer",
+      "description": "WhatsApp tools for Android",
+      "language": "Java",
+      "stars": 1405,
+      "forks": 187,
+      "starsToday": 0,
+      "periods": [
+        "daily",
+        "weekly"
+      ],
+      "sources": [
+        "daily:java",
+        "weekly:java"
+      ],
+      "primaryPeriod": "daily",
+      "source": "daily:java,weekly:java"
     }
   ],
-  "fetchedAt": "2026-07-17T04:51:21.622Z",
+  "fetchedAt": "2026-07-17T05:14:13.948Z",
   "count": 261,
   "source": "cloudflare-multi-period"
 }
